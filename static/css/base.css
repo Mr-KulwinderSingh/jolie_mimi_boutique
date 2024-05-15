@@ -15,7 +15,7 @@ body {
 }
 
 .glow-custom {
-    color: hsl(129, 87%, 76%);
+    color: hsl(48, 87%, 82%);
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #fff;
 }
 
