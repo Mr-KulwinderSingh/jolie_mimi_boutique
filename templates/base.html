@@ -108,61 +108,8 @@
                 <h4 class="logo-font my-1">Free delivery on orders over €{{ free_shipping_threshold }}!</h4>                
             </div>            
         </div>
-
-        <!-- trial
-        {% for product in products %}
-        <div class="container">
-            <div class="row gy-3">
-              <div class="col-sm">
-                <div class="card h-100">
-                    <img src="/media/categories/majenta-dress.JPG" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <figcaption class="info-wrap border-top"></figcaption>
-                      <a href="{% url 'get_product' product.slug %}" class="btn btn-primary">{{product.product_name}}</a>
-                      <div class="price mt-2">€{{product.price}}.00</div>
-                    </figcaption>
-                    </div>
-                  </div>
-              </div>
-              <div class="col-sm">
-                <div class="card h-100">
-                    <img src="/media/{{product.product_images.first.image}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <figcaption class="info-wrap border-top"></figcaption>
-                      <a href="{% url 'get_product' product.slug %}" class="btn btn-primary">{{product.product_name}}</a>
-                      <div class="price mt-2">${{product.price}}.00</div>
-                    </figcaption>
-                    </div>
-                  </div>
-              </div>
-              <div class="col-sm">
-                <div class="card h-100">
-                    <img src="/media/{{product.product_images.first.image}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <figcaption class="info-wrap border-top"></figcaption>
-                      <a href="{% url 'get_product' product.slug %}" class="btn btn-primary">{{product.product_name}}</a>
-                      <div class="price mt-2">${{product.price}}.00</div>
-                    </figcaption>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          {% endfor %} -->
-
-
-        <div class="container mt-5 pt-5">
-            <div class="row">
-                
- 
     </header>
+    
 
     {% if messages %}
         <div class="message-container"></div>

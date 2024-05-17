@@ -1,0 +1,29 @@
+[
+
+    { "pk": 1,
+     "model": "products.product",
+     "fields": {
+       "Sku": "20240001",
+       "Name": "Dress",
+       "Descritpion": "Majenta-maxi",
+       "Selling_Price": "35.00",
+       "discounted_price": "35.00",
+       "Category": "Dresses",
+       "Image": "majent-dress.jpg"
+     }
+   },
+   {
+     "pk": 2,
+     "model": "products.product",
+     "fields":
+     {
+       "Sku": "20240002",
+       "Name": "Kurta",
+       "Descritpion": "Kurta-Top",
+       "Selling_Price": "20.00",
+       "discounted_price": "20.00",
+       "Category": "Kurta-Tops",
+       "Image": "liner-kurta.jpg"
+     }
+   }
+   ]
