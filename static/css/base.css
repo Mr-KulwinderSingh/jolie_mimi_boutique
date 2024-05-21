@@ -5,7 +5,7 @@ html {
 body {
     background: url('/media/shop-4.jpg') no-repeat center center fixed;
     height: calc(100vh - 164px);
-    color: rgb(237, 145, 145);
+    color: rgb(10, 9, 9);
     font-family: Nunito, sans-serif;
 }
 
@@ -45,6 +45,16 @@ body {
 .btn-black {
     background: black;
     color: white;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
 .shop-now-button:hover,
