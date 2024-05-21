@@ -84,8 +84,8 @@
         "pk": 10,
         "model": "products.category",
         "fields": {
-        "name": "Party-wear",
-        "friendly_name": "party wear"
+        "name": "Partywear",
+        "friendly_name": "partywear"
         }
     },
 
