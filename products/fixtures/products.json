@@ -1,29 +1,183 @@
 [
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240001,
+        "name": "Dress",
+        "description": "Majenta-maxi",
+        "selling_price": 35.00,
+        "discounted_price":0.00,
+        "category": 4,
+        "image": "majent-dress-1.jpg"
+        }
+    },
 
-    { "pk": 1,
-     "model": "products.product",
-     "fields": {
-       "Sku": "20240001",
-       "Name": "Dress",
-       "Descritpion": "Majenta-maxi",
-       "Selling_Price": "35.00",
-       "discounted_price": "35.00",
-       "Category": "Dresses",
-       "Image": "majent-dress.jpg"
-     }
-   },
-   {
-     "pk": 2,
-     "model": "products.product",
-     "fields":
-     {
-       "Sku": "20240002",
-       "Name": "Kurta",
-       "Descritpion": "Kurta-Top",
-       "Selling_Price": "20.00",
-       "discounted_price": "20.00",
-       "Category": "Kurta-Tops",
-       "Image": "liner-kurta.jpg"
-     }
-   }
-   ]
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+        "sku": "20240002",
+        "name": "Kurta",
+        "description": "Kurta-Top",
+        "selling_price": 20.99,
+        "discounted_price":0.00,
+        "category": 7,
+        "image": "liner-kurta.jpg"
+        }
+    },
+
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240003,
+        "name": "Anarkali",
+        "description": "A Traditional but modern stitching style and a new look of Indian suit named anarkali is here ",
+        "selling_price": 25.99,
+        "discounted_price":0.00,
+        "category": 1,
+        "image": ""
+        }
+    },
+
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+        "sku": 20242004,
+        "name": "(casual) dress",
+        "description": "A great example of simple and comfort shiny pink dress ",
+        "selling_price": 14.99,
+        "discounted_price":0.00,
+        "category": 2,
+        "image": ""
+        }
+    },
+
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+        "sku": 20242005,
+        "name": "flower-suit(clearance)",
+        "description": "pink flower butterfly suit",
+        "selling_price": 11.99,
+        "discounted_price":0.00,
+        "category": 3,
+        "image": ""
+        }
+    },
+
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240006,
+        "name": "pink suit(deals)",
+        "description": "pink suit (deals)",
+        "selling_price": 35.99,
+        "discounted_price":0.00,
+        "category": 5,
+        "image": ""
+        }
+    },
+
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240007,
+        "name": "v shape necklace",
+        "description": "made with pink shiny pearls lovely necklace",
+        "selling_price": 10.99,
+        "discounted_price":0.00,
+        "category": 6,
+        "image": ""
+        }
+    },
+
+    {
+        "pk": 8,
+        "model": "products.product",
+       "fields": {
+        "sku": 20240008,
+        "name": "Lime Lehnga",
+        "description": "Lovely looking lime colour traditional lehnga",
+        "selling_price": 24.99,
+        "discounted_price":0.00,
+        "category": 8,
+        "image": ""
+       }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240009,
+        "name": "light green kurta",
+        "description": "light green kurta for special occasions",
+        "selling_price": 12.99,
+        "discounted_price":0.00,
+        "category": 9,
+        "image": ""
+        }
+    },
+
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240010,
+        "name": "Glittering-party pink dress",
+        "description": "Absolutely stunning looking full with the glitters a cute pink dress",
+        "selling_price": 54.99,
+        "discounted_price":0.00,
+        "category": 10,
+        "image":""
+        }
+    },
+
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240011,
+        "name": "White flower printed kurta ",
+        "description": "Beautiful white transparent body hugging kurta",
+        "selling_price": 13.99,
+        "discounted_price":0.00,
+        "category": 11,
+        "image": ""
+        }
+    },
+
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240012,
+        "name": "A traditional blue suit",
+        "description": "A traditional sky blue flower print lovely looking suit",
+        "selling_price": 23.99,
+        "discounted_price":0.00,
+        "category": 12,
+        "image":""
+        }
+    },
+
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+        "sku": 20240013,
+        "name": "flower print",
+        "description": "Georgette material unstitch suite approximately 5 meters long with the standard width",
+        "selling_price": 9.99,
+        "discounted_price":0.00,
+        "category": 13,
+        "image": ""
+        }
+
+    }
+]

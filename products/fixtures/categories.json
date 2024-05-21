@@ -1,0 +1,118 @@
+[
+    {
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+        "name": "anarkali",
+        "friendly_name": "anarkali"
+        }
+    },
+
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+        "name": "casual",
+        "friendly_name": "casual"
+        }
+    },
+
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {
+        "name": "clearance",
+        "friendly_name": "clearance"
+        }
+    },
+
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {
+        "name": "dresses",
+        "friendly_name": "dresses"
+        }
+    },
+
+    {
+        "pk": 5,
+        "model": "products.category",
+        "fields": {
+        "name": "deals",
+        "friendly_name": "deals"
+        }
+    },
+
+    {
+        "pk": 6,
+        "model": "products.category",
+        "fields": {
+        "name": "jewellery",
+        "friendly_name": "jewellery"
+        }
+    },
+
+    {
+        "pk": 7,
+        "model": "products.category",
+       "fields": {
+        "name": "kurtas_tops",
+        "friendly_name": "Kurtas & tops"
+       }
+    },
+
+    {
+        "pk": 8,
+        "model": "products.category",
+        "fields": {
+        "name": "lehngas",
+        "friendly_name": "lehngas"
+        }
+    },
+
+    {
+        "pk": 9,
+        "model":"products.category",
+        "fields": {
+        "name": "new in ",
+        "friendly_name": "new in"
+        }
+    },
+
+    {
+        "pk": 10,
+        "model": "products.category",
+        "fields": {
+        "name": "Party-wear",
+        "friendly_name": "party wear"
+        }
+    },
+
+    {
+        "pk": 11,
+        "model": "products.category",
+        "fields": {
+        "name": "spring_summer",
+        "friendly_name": "spring/summer"
+        }
+    },
+
+    {
+        "pk": 12,
+        "model": "products.category",
+        "fields": {
+        "name": "suits_sets",
+        "friendly_name": "suits sets"
+        }
+    },
+
+    {
+        "pk": 13,
+        "model":"products.category",
+        "fields": {
+        "name": "unstitched",
+        "friendly_name": "unstitch"
+        }
+    }
+]
