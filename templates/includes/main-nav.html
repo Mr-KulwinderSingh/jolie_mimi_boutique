@@ -1,15 +1,10 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="new-arrivals-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=new_in" id="new_in-link" aria-haspopup="true" aria-expanded="false">
                 New In
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=selling_price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=discounted_price&direction=desc" class="dropdown-item ">Sale</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">Shop All</a>
-            </div>
+            
         </li>
 
         <li class="nav-item dropdown">
@@ -17,15 +12,9 @@
                 Shop All
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=new_in" class="dropdown-item">New In</a>
-                <a href="{% url 'products' %}?category=spring_summer" class="dropdown-item">Spring/Summer</a>
-                <a href="{% url 'products' %}?category=casual" class="dropdown-item">Casual</a>
-                <a href="{% url 'products' %}?category=partywear" class="dropdown-item">Partywear</a>
-                <a href="{% url 'products' %}?category=dresses" class="dropdown-item">Dresses</a>
-                <a href="{% url 'products' %}?category=jewellery" class="dropdown-item">Jewellery</a>
-                <a href="{% url 'products' %}?category=anarkali,kurtas_tops,lehngas,suits_sets,unstitched" class="dropdown-item">Indian</a>
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?sort=selling_price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=discounted_price&direction=desc" class="dropdown-item ">Sale</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">Shop All</a>
             </div>
         </li>
