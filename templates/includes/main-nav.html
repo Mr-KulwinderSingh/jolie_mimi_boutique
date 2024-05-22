@@ -5,9 +5,9 @@
                 New In
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">Sale</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=selling_price&directions=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=discounted_price&directions=asc" class="dropdown-item ">Sale</a>
+                <a href="{% url 'products' %}?sort=category&directions=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">Shop All</a>
             </div>
         </li>
@@ -43,7 +43,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=partywear" id="partywear-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=party_wear" id="partywear-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
                 Partywear
             </a>
         </li>
