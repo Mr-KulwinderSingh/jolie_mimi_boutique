@@ -57,6 +57,11 @@ body {
     z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+    background:  rgb(10, 9, 9) !important;
+    color: #fff !important;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -68,7 +73,7 @@ body {
 }
 
 .text-black {
-    color: #000 !important;
+    color: rgb(10, 9, 9) !important;
 }
 
 .border-black {
@@ -78,6 +83,8 @@ body {
 .bg-delivery-banner {
     background: #f2370e;
 }
+
+
 
 /* -------------------------------- Media Queries */
 
