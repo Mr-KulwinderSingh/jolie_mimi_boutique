@@ -30,10 +30,10 @@
                         <div class="sort-select-wrapper w-50">
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                <option value="rating_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Sale (low to high)</option>
-                                <option value="rating_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Sale (high to low)</option>
+                                <option value="selling_price_asc" {% if current_sorting == 'selling_price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="selling_price_desc" {% if current_sorting == 'selling_price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Sale (low to high)</option>
+                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Sale (high to low)</option>
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                                 <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
                                 <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
@@ -77,10 +77,10 @@
                                             </a>
                                         </p>
                                         {% endif %}
-                                        {% if product.discounted_price %}
-                                            <small class="text-muted"><i class="fa-solid fa-comment-dollar mr-1"></i>Sale Price {{ product.discounted_price }}</small>
+                                        {% if product.rating %}
+                                            <small class="text-muted"><i class="fa-solid fa-comment-dollar mr-1"></i>Sale Price {{ product.rating }}</small>
                                         {% else %}
-                                            <small class="text-muted">Special Price</small>
+                                            <small class="text-muted">No Rating</small>
                                         {% endif %}
                                     </div>
                                 </div>

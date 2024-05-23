@@ -36,6 +36,11 @@
   </head>
   <body>
     <header class="container-fluid fixed-top">
+        <div id="welcome-banner" class="row text-center">
+            <div class="col bg-welcome-banner text-black">
+                <p class="my-0">WELCOME OFFER * REGISTER & GET 10% OFF ON YOUR 1ST PURCHASE.</p>                
+            </div>            
+        </div>
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex ">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -103,9 +108,9 @@
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
         </div>
-        <div id="delivery-banner" class="row text-center">
-            <div class="col bg-delivery-banner text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>                
+        <div id="delivery-banner" class="text-center">
+            <div class="col flex-column bg-delivery-banner text-white rounded">
+                <p class="logo-font my-0">Free delivery on orders over €{{ free_delivery_threshold }}!</p>                
             </div>            
         </div>
     </header>

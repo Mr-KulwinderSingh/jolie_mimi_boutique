@@ -92,6 +92,10 @@ a.category-badge > span.badge:hover {
     border: 1px solid black !important;
 }
 
+.bg-welcome-banner {
+    background: hsl(50, 90%, 50%);
+}
+
 .bg-delivery-banner {
     background: #f2370e;
 }
