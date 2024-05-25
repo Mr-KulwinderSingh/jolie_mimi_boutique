@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaini&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Jaini&display=swap');
+
 html {
     height: 100%;
 }
@@ -17,6 +20,13 @@ body {
 .glow-custom {
     color: hsl(48, 87%, 82%);
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #fff;
+}
+
+.logo-only {
+    font-family: "Jaini", system-ui;
+}
+.part-logo {
+    font-family: "Edu TAS Beginner", cursive;
 }
 
 /* from Bulma */
@@ -73,6 +83,20 @@ a.category-badge > span.badge:hover {
 .btt-link {
     cursor: pointer;
 }
+
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+/* .btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+} */
+
 
 .shop-now-button:hover,
 .shop-now-button:active,
