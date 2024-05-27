@@ -46,6 +46,11 @@ body {
     width: fit-content;
 }
 
+#main-nav{
+    padding-top: 2px;
+
+}
+
 .shop-now-button {
     background: black;
     color: white;

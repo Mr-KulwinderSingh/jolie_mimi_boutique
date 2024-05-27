@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Mimi's Collections</h2>
+                <h3 class="">Mimi's Collections</h3>
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded border border-dark">{{ c.friendly_name }}</span>
@@ -78,9 +78,9 @@
                                         </p>
                                         {% endif %}
                                         {% if product.rating %}
-                                            <small class="text-muted"><i class="fa-solid fa-comment-dollar mr-1"></i>Sale Price {{ product.rating }}</small>
+                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                         {% else %}
-                                            <small class="text-muted">No Rating</small>
+                                            <small class="text-muted">No Rating Yet</small>
                                         {% endif %}
                                     </div>
                                 </div>
