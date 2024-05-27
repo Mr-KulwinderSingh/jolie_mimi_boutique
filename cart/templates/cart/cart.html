@@ -20,7 +20,6 @@
     </div>
     <div class="row">
         <div class="col">
-            {% if cart_items %}
             <div class="table-responsive rounded">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
@@ -47,7 +46,7 @@
                             
                         </td>
                         <td class="py-3">
-                            <p class="my-0">{{ item.product.name }}</p>
+                            <p class="my-0">{{ item.quantity }}</p>
                             
                         </td>
                         <td class="py-3">
