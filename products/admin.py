@@ -13,6 +13,7 @@ class ProducAdmin(admin.ModelAdmin):
         'rating',
         'description',
         'image',
+        'has_sizes',
     )
 
     ordering = ('sku',)
