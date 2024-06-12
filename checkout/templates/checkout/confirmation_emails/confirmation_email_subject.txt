@@ -1,0 +1,1 @@
+Jolie Mimi Boutique confirmation for order number {{ order.order_number }}
