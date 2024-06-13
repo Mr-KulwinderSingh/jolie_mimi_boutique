@@ -6,7 +6,8 @@ html {
 }
 
 body {
-    background: url('/media/new-7-Photoroom.jpg') no-repeat center center fixed;
+    background: url('/media/base-photo.jpg') no-repeat center center fixed;
+    background-size: cover;
     height: calc(100vh - 164px);
     color: rgb(10, 9, 9);
     font-family: Nunito, sans-serif;

@@ -50,11 +50,11 @@
 				</div>
 				<!-- Buttons -->
 				<div class="text-center">
-					<a class="btn btn-black btn-width mt-3" href="{% url 'product_detail' product.id %}">
-						<span class="text-uppercase font-weight-bold">Product Details</span>
+					<a class="btn btn-warning border-black mt-3" href="{% url 'product_detail' product.id %}">
+						<span class="text-uppercase">Product Details</span>
 					</a>
-					<a class="btn btn-black btn-width mt-3" href="{% url 'remove_from_wishlist' product.id %}">
-						<span class="text-uppercase font-weight-bold">Remove from wishlist</span>
+					<a class="btn btn-danger border-black mt-3" href="{% url 'remove_from_wishlist' product.id %}">
+						<span class="text-uppercase">Remove from wishlist</span>
 					</a>
 				</div>
 			</div>
@@ -63,12 +63,12 @@
 		<div class="row justify-content-center">
 			<!-- Wishlist Page "if" empty -->
 			<div class="text-center mt-3">
-				<h3 class="font-weight-bold text-uppercase">You have no items in your wishlist</h3>
-				<a class="btn btn-light btn-lg mt-5" href="{% url 'products' %}">
-					<span class="icon">
-						<i class="text-info fas fa-chevron-left"></i>
-					</span>
-					<span class="text-uppercase font-weight-bold text-info">Keep Shopping</span>
+				<h3>You have no items in your wishlist</h3>
+				<a class="btn btn-warning btn-lg mt-5" href="{% url 'products' %}">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+					<span class="text-uppercase">Keep Shopping</span>
 				</a>
 			</div>
 		</div>

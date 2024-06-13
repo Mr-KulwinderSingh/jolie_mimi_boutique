@@ -4,10 +4,9 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
 
-# Create your views here.
+
 def shop_all(request):
     """ Show all products together with sorting order and search selection """
-
     products = Product.objects.all()
     query = None
     categories = None
@@ -31,7 +30,6 @@ def shop_all(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -42,7 +40,10 @@ def shop_all(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You did not enter any search criteria")
+                messages.error(
+                    request,
+                    "You did not enter any search criteria"
+                )
                 return redirect(reverse ('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
