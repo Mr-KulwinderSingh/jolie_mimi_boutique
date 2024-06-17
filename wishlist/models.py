@@ -19,7 +19,7 @@ class WishList(models.Model):
 class WishListItem(models.Model):
     """
     A 'through' model, allowing users to add
-    individual products to their wishlist.
+    individual product to their wishlist.
     """
 
     product = models.ForeignKey(Product,

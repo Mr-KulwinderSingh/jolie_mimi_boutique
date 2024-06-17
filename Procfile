@@ -1,0 +1,1 @@
+web: gunicorn jolie_mimi_boutique.wsgi:application
