@@ -28,10 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    'jolie-mimi-boutique-ad3e13f83c61.herokuapp.com',
-    'localhost',
-    '8000-mrkulwinder-joliemimibo-6iut6zxu5lz.ws-eu114.gitpod.io'
-    ]
+    'jolie-mimi-boutique-ad3e13f83c61.herokuapp.com', 'localhost',]
 
 
 # Application definition
@@ -233,7 +230,4 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-
-print("development in environment === ",os.environ.get("DEVELOPMENT"))
-
+    
