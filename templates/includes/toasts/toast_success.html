@@ -1,6 +1,6 @@
-<div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
+<div class="toast custom-toast rounded border-top-0" data-autohide="false">
     <div class="arrow-up arrow-success"></div>
-    <div class="w-100 toast-capper bg-success rounded"></div>
+    <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-white text-dark">
         <strong class="mr-auto">Success!</strong>
         <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
@@ -42,11 +42,11 @@
                         <span class="float-right">€{{ total|floatformat:2 }}</span>
                     </p></strong>
 
-                    <a href="{% url 'view_cart' %}" class="btn btn-outline-black btn-block rounded-0 mt-2">
-                        <span class="text-uppercase">View Cart</span>
+                    <a href="{% url 'view_cart' %}" class="btn btn-outline-black btn-block rounded mt-2">
+                        <span>View Cart</span>
                     </a>
-                    <a href="{% url 'checkout' %}" class="btn btn-black btn-block rounded-0 mb-2">
-                        <span class="text-uppercase">Pay Now</span>
+                    <a href="{% url 'checkout' %}" class="btn btn-black btn-block rounded mb-2">
+                        <span>Pay Now</span>
                         <span class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-credit-card-2-back-fill" viewBox="0 0 16 16">
