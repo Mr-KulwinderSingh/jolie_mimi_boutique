@@ -45,7 +45,7 @@
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a href="{% url 'edit_product' product.id %}">Update </a> or
-                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete Product</a>
+                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                     </small>
                     {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
@@ -98,19 +98,18 @@
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
+                                    <span class=" btn btn-warning">Keep Shopping</span>
                                 </a>
-                                {% if request.user.is_authenticated %}
-                                <a class="btn btn-secondary btn-width mt-3" href="{% url 'add_to_wishlist' product.id %}">
-                                    <span class="text-uppercase">Add to wishlist</span>
-
-                                </a>
-                            {% endif %}
-                                <input type="submit" class="btn btn-secondary rounded text-uppercase mt-5" value="Add to Cart">
-            
+                                <input type="submit" class="btn btn-success rounded mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
+                            {% if request.user.is_authenticated %}
+                                <a class="btn btn-danger btn-width mt-3" href="{% url 'add_to_wishlist' product.id %}">
+                                    <span>Add to Wishlist</span>
+
+                                </a>
+                            {% endif %}
                         </div>
                     </form>
                 </div>
