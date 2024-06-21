@@ -302,6 +302,22 @@ input[name='q']::placeholder {
     border-radius: 0%;
 }
 
+/* footer styles */
+
+.background-footer::before {
+    content: '';
+    background-image: url();
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.35;
+
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

@@ -156,6 +156,124 @@
     </script>
     {% endblock %}
 
+
+      <!--Footer beginning-->
+      <footer class="col-10 mt-5 text-dark offset-1 rounded background-footer">
+        <div class="row">
+            <!--Help Column-->
+            <div class="col-md-2 mt-2">
+                <p>Help</p>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><a href="" aria-label="Contact Us"
+                            class="text-decoration-none footer-contact">Contact
+                            Us</a></li>
+                    <li><a href="" aria-label="FAQ" class="text-decoration-none footer-contact">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Account Column-->
+            <div class="col-md-2 mt-2">
+                <p>My Account</p>
+                <hr>
+                <!--If logged in, show appropriate links, else show login/register-->
+                {% if request.user.is_authenticated %}
+                <!--Show management access for superusers-->
+                {% if request.user.is_superuser %}
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'manage_products' %}" aria-label="Product Management"
+                            class="text-decoration-none footer-contact">Product Management</a></li>
+                </ul>
+                {% endif %}
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'profile' %}" aria-label="Profile"
+                            class="text-decoration-none footer-contact">Profile</a></li>
+                    <li><a href="{% url 'account_logout' %}" aria-label="Logout"
+                            class="text-decoration-none footer-contact">Logout</a></li>
+                </ul>
+                {% else %}
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'account_login' %}" aria-label="Login"
+                            class="text-decoration-none footer-contact">Login</a></li>
+                    <li><a href="{% url 'account_signup' %}" aria-label="Register"
+                            class="text-decoration-none footer-contact">Register</a></li>
+                </ul>
+                {% endif %}
+
+            </div>
+            <!--Pages column-->
+            <div class="col-md-2 mt-2">
+                <p>Pages</p>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home' %}" aria-label="Home"
+                            class="text-decoration-none footer-contact">Home</a>
+                    </li>
+                    <li><a href="{% url 'products' %}" aria-label="All Products"
+                            class="text-decoration-none footer-contact">All
+                            Products</a></li>
+                    <li><a href="{% url 'products' %}?category=deals,clearance" aria-label="Special Offers"
+                            class="text-decoration-none footer-contact">Sale & Offers</a></li>
+                  
+                </ul>
+            </div>
+            <div class="col-md-2"></div>
+            <!--Info Column-->
+            <div class="col-md-4 mt-2 footer-contact">
+                <span class="d-flex my-2">
+                    <a href="Https://wa.me/353892762543" class="text-decoration-none">                 
+                        <i class="fa-brands fa-square-whatsapp"></i>
+                        Click to Whatsapp us:</a>
+                </span>
+                <span class="d-flex my-2">
+                    <a class="text-decoration-none" href=mailto:“k29singh@gmail.com”>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-envelope-fill mx-2" viewBox="0 0 16 16">
+                            <path
+                                d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                        </svg>
+                        Email us here!
+                    </a>
+                </span>
+                <span class="d-flex my-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg>
+                    <a href="https://maps.app.goo.gl/JjcY7xLdVh3GYLLU8"
+                        class="mx-2 text-muted">73 Dublin Road, Longford, Ireland</a>
+                </span>
+            </div>
+        </div>
+        <!--Copyright/Social/Privacy Policy-->
+        <div class="row mt-3">
+            <div class="col text-center">
+                <a href="https://www.facebook.com/profile.php?id=61559746556077" target="_blank"
+                    class="footer-contact text-decoration-none"><i class="fab fa-facebook-square"></i> facebook</a>
+                    <a href="https://www.instagram.com/jolie_mimi_boutique/" target="_blank"
+                    class="footer-contact text-decoration-none"><i class="fab fa-instagram"></i>
+                    Instagram</a>
+                <p class="text-muted mb-0">&copy; 2024 | Jolie Mimi Boutique | All Rights Reserved. | Kulwinder Singh</p>
+                <a href="" target="_blank"
+                    class="footer-contact text-decoration-none">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    <!-- <script>
+        $(document).ready(function () {
+            // Hide all toasts after 3 seconds except those with the class 'bag-notification-wrapper'
+            // This is so the success message with the bag, stays open for the user
+            // Every other toast should disappear after 3 seconds
+            $('.toast').not(function () {
+                return $(this).find('.bag-notification-wrapper').length > 0;
+            }).delay(3000).fadeOut('slow');
+        });
+    </script> -->
+
+</body>
+
+</html>
+
     
   </body>
 
