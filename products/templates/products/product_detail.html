@@ -93,24 +93,29 @@
                                 </div>
                             </div>
 
-                            <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded mt-5">
+                            <!-- Buttons -->
+                            <div class="col-12 btn-container text-center">
+                               
+                                <input class="btn btn-success add-btn-height mt-3 mr-1 " type="submit" value="Add to Cart">
+                            
+                                {% if request.user.is_authenticated %}
+                                    <a class="btn btn-info btn-danger mt-3 mr-1" href="{% url 'add_to_wishlist' product.id %}">
+                                        <span class="">Add to wishlist</span>
+                                        <span class="icon">
+                                            <i class="fas fa-heart"></i>
+                                        </span> 
+                                    </a>
+                                {% endif %}
+                                <a class="btn btn-warning mt-3" href="{% url 'products' %}">
                                     <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
+                                        
                                     </span>
-                                    <span class=" btn btn-warning">Keep Shopping</span>
+                                    <span class="">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-success rounded mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            {% endwith %}
-                            {% if request.user.is_authenticated %}
-                                <a class="btn btn-danger btn-width mt-3" href="{% url 'add_to_wishlist' product.id %}">
-                                    <span>Add to Wishlist</span>
-
-                                </a>
-                            {% endif %}
                         </div>
+                        {% endwith %}
                     </form>
                 </div>
             </div>

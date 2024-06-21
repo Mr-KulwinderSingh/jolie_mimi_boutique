@@ -64,6 +64,17 @@ body {
     color: white;
 }
 
+
+.btn-container {
+    display: flex;
+    height: 65px;
+}
+
+.add-btn-height {
+    height: 50px;
+
+}
+
 .overlay {
     height: 100%;
     width: 100%;
@@ -304,19 +315,9 @@ input[name='q']::placeholder {
 
 /* footer styles */
 
-.background-footer::before {
-    content: '';
-    background-image: url();
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    opacity: 0.35;
-
+.transparent:hover{
+    background-color: white;
+    opacity: 0.65;
 }
 
 /* fixed top navbar only on medium and up */

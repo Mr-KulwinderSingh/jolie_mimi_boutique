@@ -158,17 +158,17 @@
 
 
       <!--Footer beginning-->
-      <footer class="col-10 mt-5 text-dark offset-1 rounded background-footer">
+      <footer class="col-10 mt-5 offset-1 transparent rounded text footer-col">
         <div class="row">
             <!--Help Column-->
             <div class="col-md-2 mt-2">
-                <p>Help</p>
+                <p class="footer-contact">Help</p>
                 <hr>
                 <ul class="list-unstyled">
                     <li><a href="" aria-label="Contact Us"
-                            class="text-decoration-none footer-contact">Contact
+                            class="text-decoration-none footer-contact text-black">Contact
                             Us</a></li>
-                    <li><a href="" aria-label="FAQ" class="text-decoration-none footer-contact">FAQ</a>
+                    <li><a href="" aria-label="FAQ" class="text-decoration-none footer-contact text-black">FAQ</a>
                     </li>
                 </ul>
             </div>
@@ -181,7 +181,7 @@
                 <!--Show management access for superusers-->
                 {% if request.user.is_superuser %}
                 <ul class="list-unstyled">
-                    <li><a href="{% url 'manage_products' %}" aria-label="Product Management"
+                    <li><a href="{% url 'add_product' %}" aria-label="Product Management"
                             class="text-decoration-none footer-contact">Product Management</a></li>
                 </ul>
                 {% endif %}
@@ -194,9 +194,9 @@
                 {% else %}
                 <ul class="list-unstyled">
                     <li><a href="{% url 'account_login' %}" aria-label="Login"
-                            class="text-decoration-none footer-contact">Login</a></li>
+                            class="text-decoration-none footer-contact text-black">Login</a></li>
                     <li><a href="{% url 'account_signup' %}" aria-label="Register"
-                            class="text-decoration-none footer-contact">Register</a></li>
+                            class="text-decoration-none footer-contact text-black">Register</a></li>
                 </ul>
                 {% endif %}
 
@@ -207,13 +207,13 @@
                 <hr>
                 <ul class="list-unstyled">
                     <li><a href="{% url 'home' %}" aria-label="Home"
-                            class="text-decoration-none footer-contact">Home</a>
+                            class="text-decoration-none footer-contact text-black">Home</a>
                     </li>
                     <li><a href="{% url 'products' %}" aria-label="All Products"
-                            class="text-decoration-none footer-contact">All
+                            class="text-decoration-none footer-contact text-black">All
                             Products</a></li>
                     <li><a href="{% url 'products' %}?category=deals,clearance" aria-label="Special Offers"
-                            class="text-decoration-none footer-contact">Sale & Offers</a></li>
+                            class="text-decoration-none footer-contact text-black">Sale & Offers</a></li>
                   
                 </ul>
             </div>
@@ -221,14 +221,14 @@
             <!--Info Column-->
             <div class="col-md-4 mt-2 footer-contact">
                 <span class="d-flex my-2">
-                    <a href="Https://wa.me/353892762543" class="text-decoration-none">                 
+                    <a href="Https://wa.me/353892762543" class="text-decoration-none text-black">                 
                         <i class="fa-brands fa-square-whatsapp"></i>
                         Click to Whatsapp us:</a>
                 </span>
                 <span class="d-flex my-2">
-                    <a class="text-decoration-none" href=mailto:“k29singh@gmail.com”>
+                    <a class="text-decoration-none text-black" href=mailto:“k29singh@gmail.com”>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                            class="bi bi-envelope-fill mx-2" viewBox="0 0 16 16">
+                            class="bi bi-envelope-fill mx-2 text-black" viewBox="0 0 16 16">
                             <path
                                 d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
                         </svg>
@@ -259,7 +259,7 @@
             </div>
         </div>
     </footer>
-    <!-- <script>
+    <script>
         $(document).ready(function () {
             // Hide all toasts after 3 seconds except those with the class 'bag-notification-wrapper'
             // This is so the success message with the bag, stays open for the user
@@ -268,7 +268,7 @@
                 return $(this).find('.bag-notification-wrapper').length > 0;
             }).delay(3000).fadeOut('slow');
         });
-    </script> -->
+    </script>
 
 </body>
 
