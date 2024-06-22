@@ -167,12 +167,11 @@
                 <p class="footer-contact">Jolie Mimi Boutique</p>
                 <hr>
                 <ul class="list-unstyled">
-                    <li><a href="" aria-label="Contact Us"
-                            class="text-decoration-none footer-contact text-black">About
-                            Us</a></li>
-                    <li><a href="" aria-label="Contact Us"
-                            class="text-decoration-none footer-contact text-black">FAQ
-                            </a></li>
+                    <li><a href="{% url 'contact' %}" aria-label="Contact Us"
+                        class="text-decoration-none footer-contact">Contact
+                        Us</a></li>
+                <li><a href="{% url 'faq' %}" aria-label="FAQ" class="text-decoration-none footer-contact">FAQ</a>
+                </li>
                     <li><a href="" aria-label="FAQ" class="text-decoration-none footer-contact text-black">Help</a>
                     </li>
                 </ul>
