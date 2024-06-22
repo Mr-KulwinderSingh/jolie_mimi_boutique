@@ -19,6 +19,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
                 <a href="{% url 'products' %}?sort=selling_price&direction=asc" class="dropdown-item"><small>By Price</small></a>
                 <a href="{% url 'products' %}?sort=discounted_price&direction=desc" class="dropdown-item "><small>Sale</small></a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item "><small>By Rating</small></a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item "><small>By Category</small></a>
                 <a href="{% url 'products' %}" class="dropdown-item"><small>Shop All</small></a>
             </div>

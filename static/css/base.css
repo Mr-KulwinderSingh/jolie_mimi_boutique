@@ -372,6 +372,10 @@ input[name='q']::placeholder {
 
     }
 
+    .btn-warning, .btn-danger {
+        padding: .175rem;
+    }
+
     .btn.btn-outline-black.rounded.btn-lg,
     .btn.btn-black.rounded.btn-lg {
         padding: .375rem .375rem;
@@ -385,15 +389,6 @@ input[name='q']::placeholder {
 }
 
 /* mailchimp */
-
-#mc_embed_signup {
-    /* background: none;
-    clear: left;
-    font: 14px Nunito, sans-serif; */
-    left: auto;
-    width: 400px;
-    padding: 0%;
-}
 
 #mc_embed_signup form {
     /* background: none;
