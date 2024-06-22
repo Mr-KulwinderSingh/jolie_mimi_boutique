@@ -383,3 +383,14 @@ input[name='q']::placeholder {
 
     }
 }
+
+/* mailchimp */
+
+#mc_embed_signup form {
+    /* background: none;
+    clear: left;
+    font: 14px Nunito, sans-serif; */
+    width: 400px;
+    padding: 0%;
+}
+                          
