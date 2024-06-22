@@ -317,7 +317,7 @@ input[name='q']::placeholder {
 
 .transparent:hover{
     background-color: white;
-    opacity: 0.65;
+    /* opacity: 0.5; */
 }
 
 /* fixed top navbar only on medium and up */
@@ -386,10 +386,20 @@ input[name='q']::placeholder {
 
 /* mailchimp */
 
+#mc_embed_signup {
+    /* background: none;
+    clear: left;
+    font: 14px Nunito, sans-serif; */
+    left: auto;
+    width: 400px;
+    padding: 0%;
+}
+
 #mc_embed_signup form {
     /* background: none;
     clear: left;
     font: 14px Nunito, sans-serif; */
+    left: auto;
     width: 400px;
     padding: 0%;
 }
