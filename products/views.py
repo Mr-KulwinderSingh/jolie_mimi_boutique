@@ -102,6 +102,38 @@ def add_review(request, product_id):
     return render(request, context)
 
 @login_required
+def edit_review(request, review_id):
+    """
+    A view to allow the users to edit their own review
+    """
+
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.info(request, 'Review has been changed')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(
+                request, 'Review edit failed, Please try again')
+
+    else:
+        form = ReviewForm(instance=review)
+
+    messages.info(request, 'You are editing your review')
+    template = 'products/product_detail.html'
+    context = {
+        'form': form,
+        'review': review,
+        'product': product,
+        'edit': True,
+    }
+    return render(request, template, context)
+
+@login_required
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
@@ -130,6 +162,7 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Edit/Update an existing product """
+    
     if not request.user.is_superuser:
         messages.error(request,'Sorry only store owner can do that.')
         return redirect(reverse('home'))

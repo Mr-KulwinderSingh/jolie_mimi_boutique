@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -155,9 +156,9 @@
                     <!-- Edit Review Button-->
                     {% if review.user == request.user or request.user.is_superuser %}
                         <div class="card-head text-right">
-                            <!-- <a class="btn btn-info edit-btn" href="{% url 'edit_review' review.id %}#reviews">
+                            <a class="btn btn-info edit-btn" href="{% url 'edit_review' review.id %}#reviews">
                                 Edit Review
-                            </a> -->
+                            </a>
                         </div>
                     {% endif %}
                     <div class="card-body">
@@ -175,8 +176,8 @@
     </div> 
 </div>
 
-    {% endblock %}
-    {% block postloadjs %}
-    {{ block.super }}
-    {% include 'products/includes/quantity_input_script.html' %}
-    {% endblock %}
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+{% endblock %}
