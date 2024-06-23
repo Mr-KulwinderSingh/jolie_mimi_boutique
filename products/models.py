@@ -46,20 +46,6 @@ class Product(models.Model):
         return self.name
 
 
-class Rating(models.Model):
-    """
-    Defining the rating model
-    """
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    created_on = models.DateTimeField(auto_now_add=True)
-    body = models.TextField()
-    score = models.IntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)])
 
-    def __str__(self):
-        return f"{self.user.username}'s rating for {self.product.name}"
-    
 
     

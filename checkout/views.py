@@ -106,6 +106,8 @@ def  checkout(request):
         currency=settings.STRIPE_CURRENCY,
     )
 
+    print(intent)
+
     if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

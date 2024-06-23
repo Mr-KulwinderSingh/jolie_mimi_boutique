@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block extra_title %}
-
+- Contact Us
 {% endblock %}
 
 {% block page_header %}
@@ -14,7 +14,7 @@
 {% block faq %}
 <div class="overlay"></div>
 <div class="container-fluid col-lg-4 col-8">
-    <h1 class="mt-5 mb-4">Contact Us</h1>
+    <h3 class="mt-5 mb-4">Contact Us</h3>
     <form action="{% url 'contact' %}" method="post">
         {% csrf_token %}
         <div class="mb-3">
@@ -40,7 +40,7 @@
             <label for="message" class="form-label">Message:</label>
             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
         </div>
-        <button type="submit" class="btn-black rounded-0 text-uppercase text-decoration-none p-2">Submit</button>
+        <button type="submit" class="btn btn-warning rounded text-decoration-none p-2">Submit</button>
     </form>
 </div>
 {% endblock %}
