@@ -64,7 +64,7 @@ def shop_all(request):
 
 
 def product_detail(request, product_id):
-    """  A view to an individual product detail """
+    """  A view to show an individual products """
 
     product = get_object_or_404(Product, pk=product_id)
 
