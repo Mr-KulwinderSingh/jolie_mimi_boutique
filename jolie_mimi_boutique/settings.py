@@ -23,13 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
-SECRET_KEY = 'mq)xh^x$6x-s!o_iixhg!c3)!_3tf_kel(mui@!$kh@$!ne2_t'
+DEBUG = 'DEVELOPMENT' in os.environ
 
-# DEBUG = 'DEVELOPMENT' in os.environ
-
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = [
     'jolie-mimi-boutique-ad3e13f83c61.herokuapp.com',
