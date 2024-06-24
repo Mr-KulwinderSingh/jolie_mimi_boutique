@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, ProductReview
 from .forms import ReviewForm, ProductForm
+from .forms import *
 
 
 def shop_all(request):
@@ -66,9 +67,11 @@ def product_detail(request, product_id):
     """  A view to show an individual products """
 
     product = get_object_or_404(Product, pk=product_id)
+    form = ReviewForm
 
     context = {
-        'product': product
+        'product': product,
+        'form': form,
     }
     
     return render (request, 'products/product_detail.html', context)
@@ -96,10 +99,11 @@ def add_review(request, product_id):
                 messages.error(
                     request, 'Failed to add your review')
     context = {
-        'form': form
+        'form': form,
+        'product': product,
     }
 
-    return render(request, context)
+    return render(request, 'products/product_detail.html', context)
 
 @login_required
 def edit_review(request, review_id):
@@ -162,7 +166,7 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Edit/Update an existing product """
-    
+
     if not request.user.is_superuser:
         messages.error(request,'Sorry only store owner can do that.')
         return redirect(reverse('home'))

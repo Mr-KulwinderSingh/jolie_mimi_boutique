@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -122,7 +121,7 @@
       <!-- Product Reviews-->
       <div id="reviews" class="row">
         <div class="col-12 col-md-10 col-lg-4 offset-lg-4 mt-1">
-            <h2 class="text-black font-weight-bold mt-5">Reviews</h2>
+            <h3 class="text-black mt-5">Reviews</h2>
             {% if request.user.is_authenticated %}
                 {% if edit %}
                     <!-- Edit Review Form -->
@@ -130,7 +129,7 @@
                         {% csrf_token %}
                         {{ form|crispy }}
                         <div class="text-right">
-                            <button class="btn btn-info font-weight-bold" type="submit">Update Review</button>
+                            <button class="btn btn-warning" type="submit">Update Review</button>
                         </div>
                     </form>
                 {% else %}
@@ -139,7 +138,7 @@
                         {% csrf_token %}
                         {{ form|crispy }}
                         <div class="text-right">
-                            <button class="btn btn-info font-weight-bold" type="submit">Submit Review</button>
+                            <button class="btn btn-success" type="submit">Submit Review</button>
                         </div>
                     </form>
                 {% endif %}
@@ -156,7 +155,7 @@
                     <!-- Edit Review Button-->
                     {% if review.user == request.user or request.user.is_superuser %}
                         <div class="card-head text-right">
-                            <a class="btn btn-info edit-btn" href="{% url 'edit_review' review.id %}#reviews">
+                            <a class="btn btn-danger" href="{% url 'edit_review' review.id %}#reviews">
                                 Edit Review
                             </a>
                         </div>
@@ -169,7 +168,7 @@
                 </div>
             {% empty %}
                 <div class="text-center mt-5">
-                    <p>No reviews for this product, you can be the first...</p>
+                    <p>No reviews for this product, you can be the first...to give <i class="fas fa-heart"></i></p>
                 </div>
             {% endfor%}
         </div>
