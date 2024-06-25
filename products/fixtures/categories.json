@@ -75,7 +75,7 @@
         "pk": 9,
         "model":"products.category",
         "fields": {
-        "name": "new in ",
+        "name": "new_in ",
         "friendly_name": "new in"
         }
     },

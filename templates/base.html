@@ -158,13 +158,6 @@
     {% block contact %}
     {% endblock %}
 
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
-    {% endblock %}
-
-
       <!--Footer beginning-->
       <footer class="col-10 mt-5 offset-1 transparent rounded text footer-col text-center">
         <div class="row">
@@ -192,7 +185,7 @@
                 {% if request.user.is_superuser %}
                 <ul class="list-unstyled">
                     <li><a href="" aria-label="Product Management"
-                            class="text-decoration-none footer-contact">Product Management</a></li>
+                            class="text-decoration-none footer-contact text-black">Product Management</a></li>
                 </ul>
                 {% endif %}
                 <ul class="list-unstyled">
@@ -257,7 +250,7 @@
             </div>
 
             <div class="col-md-2 mt-2 text-center">
-                <p>Subscribe</p>
+                <p>Stay in Touch </p>
                 <hr>
                     <div>
                         <div>
@@ -293,6 +286,11 @@
             </div>
         </div>
     </footer>
+    {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+    {% endblock %}
     <script>
         $(document).ready(function () {
             // Hide all toasts after 3 seconds except those with the class 'bag-notification-wrapper'
@@ -325,10 +323,4 @@
     </script>
 
 </body>
-
-</html>
-
-    
-  </body>
-
 </html>
