@@ -169,7 +169,7 @@ input[name='q']::placeholder {
 }
 
 .toast-color {
-    background: #ffc107;
+    background-color: #ffc107;
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */

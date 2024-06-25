@@ -1,12 +1,4 @@
-{% block page_header %}
-{% endblock %}
 {% load static %}
-
-{% block faq %}
-{% endblock %}
-
-{% block contact %}
-{% endblock %}
 
 <!doctype html>
 <html lang="en">
@@ -153,6 +145,15 @@
             {% endfor %}
         </div>
     {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block faq %}
+    {% endblock %}
+
+    {% block contact %}
+    {% endblock %}
 
     {% block content %}
     {% endblock %}

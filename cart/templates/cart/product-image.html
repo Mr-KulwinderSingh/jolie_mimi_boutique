@@ -1,5 +1,7 @@
+<!--If product has an image -->
 {% if item.product.image %}
 <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+<!--otherwise this one -->
 {% else %}
 <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
 {% endif %}
