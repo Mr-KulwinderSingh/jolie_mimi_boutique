@@ -53,7 +53,7 @@ body {
 }
 
 .shop-now-button {
-    background: rgb(247, 2, 2);
+    background: #e12656;
     color: white;
     min-width: 260px;
     border: #f8f9fa;
@@ -125,7 +125,7 @@ input[name='q']::placeholder {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus {
-    background: #f2370e;
+    background: #e12656;
     border: white;
 }
 
@@ -150,7 +150,7 @@ input[name='q']::placeholder {
 }
 
 .bg-delivery-banner {
-    background: #f2370e;
+    background: #e12656;
 }
 
 .message-container {
@@ -198,7 +198,7 @@ input[name='q']::placeholder {
 }
 
 .arrow-danger {
-    border-bottom-color: #dc3545 !important;
+    border-bottom-color: #e12656 !important;
 }
 
 .arrow-warning {
@@ -307,13 +307,13 @@ input[name='q']::placeholder {
 
 .custom-checkbox .custom-control-label::before {
     border-radius: 0%;
-    border-color: #dc3545;
+    border-color: #e12656;
 
 }
 
 .custom-checkbox .custom-control-input-checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: #e12656;
+    border-color: #e12656;
     border-radius: 0%;
 }
 

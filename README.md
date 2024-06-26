@@ -1,39 +1,76 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [Jolie Mimi Boutique](https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com/)
+<div align="center">
+ <img src="readme-images/am-i-responsive.jpeg" alt="Jolie Mimi Boutqique">
+</div>
 
-Welcome Mr-KulwinderSingh Sidhu,
+[Jolie Mimi Boutique](https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com/) is an ecommerce platfom as a ladies' boutique, dealing with the latest, chick and trendy clothes alongside some jewellery items, developed on Django. It encompasses user registration, profile management, newsletter subscriptions, and product purchases facilitated by Stripe. Users of Jolie Mimi Boutique can submit their reviews about the products they have bought or want to buy. Frontend admin controls empower easy management of products and users. Something new has also been introduced which is a live chat, this live chat can be controlled by the shop owner/staff and could be limited to one or more staff depending on the average number of customers serving who can answer customer questions straight away.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of Contents
+1. <details open>
+    <summary><a href="#ux">UX</a></summary>
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **April 26, 2024**
+    <ul>
+    <li><details>
+    <summary><a href="#goals">Goals</a></summary>
 
-## Gitpod Reminders
+    - [Visitor Goals](#visitor-goals)
+    - [Business Goals](#business-goals)
+    - [User Stories](#user-stories)
+    </details></li>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+    <li><details>
+    <summary><a href="#visual-design">Visual Design</a></summary>
 
-`python3 -m http.server`
+    - [Wireframes](#wireframes)
+    - [Fonts](#fonts)
+    - [Colors](#colors)
+    </details></li>
 
-A blue button should appear to click: _Make Public_,
+     <li><details>
+    <summary><a href="#agile-development">Agile Development</a></summary>
 
-Another blue button should appear to click: _Open Browser_.
+    - [Milestones](#project-milestones)
+    - [Progression](#project-progression)
+    </details></li>
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+    </ul>
+</details>
 
-A blue button should appear to click: _Make Public_,
+2. <details open>
+    <summary><a href="#features">Features</a></summary>
 
-Another blue button should appear to click: _Open Browser_.
+    <ul>
+    <li><details>
+    <summary><a href="#site-pages">Site Pages</a></summary>
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    - [Homepage](#homepage)
+    - [Newsletter Subscription Popup](#newsletter-subscription-popup)
+    - [Footer](#footer)
+    - [Product List](#product-list)
+    - [Product Detail](#product-detail)
+    - [Ratings](#ratings)
+    - [Blog List](#blog-list)
+    - [Blog Detail](#blog-detail)
+    - [Comment Section](#comment-section)
+    - [Post Update](#post-update)
+    - [Contact Page](#contact-page)
+    - [FAQ Page](#faq-page)
+    - [Profile Page](#profile-page)
+    - [Newsletter Subscription Management](#newsletter-subscription-management)
+    - [Bag Page](#bag-page)
+    - [Toasts Including Bag Preview](#toasts-including-bag-preview)
+    - [Product Management](#product-management)
+    - [Blog Management](#blog-management)
+    - [Checkout](#checkout)
+    - [Checkout Success](#checkout-success)
+    - [Authentication Pages](#authentication-pages)    
+    </details></li>
 
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
+    <li>
+    <a href="#features-not-yet-implemented">Features Not Yet Implemented</a>
+    </li>
+    </ul>
+</details>
 ------
 
 ## Release History
