@@ -9,7 +9,7 @@ body {
     background: url('/media/base-photo-3.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: rgb(10, 9, 9);
+    color: #0a0909;
     font-family: Nunito, sans-serif;
 }
 
@@ -54,14 +54,14 @@ body {
 
 .shop-now-button {
     background: #e12656;
-    color: white;
+    color: #fff;
     min-width: 260px;
-    border: #f8f9fa;
+    border: #000;
 }
 
 .btn-black {
-    background: black;
-    color: white;
+    background: #000000;
+    color: #ffffff;
 }
 
 
@@ -81,12 +81,12 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: white;
+    background: #ffffff;
     z-index: -1;
 }
 
 a.category-badge > span.badge:hover {
-    background:  rgb(10, 9, 9) !important;
+    background:  #0a0909 !important;
     color: #fff !important;
 }
 
@@ -109,9 +109,9 @@ input[name='q']::placeholder {
 }
 
 .btn-outline-black {
-    background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    background: #ffffff;
+    color: #000000 !important; /* use important to override link colors for <a> elements */
+    border: 1px solid #000000;
 }
 
 /* .btn-outline-black:hover,
@@ -126,7 +126,7 @@ input[name='q']::placeholder {
 .shop-now-button:active,
 .shop-now-button:focus {
     background: #e12656;
-    border: white;
+    border: #ffffff;
 }
 
 
@@ -134,7 +134,7 @@ input[name='q']::placeholder {
 .btn-black:active,
 .btn-black:focus {
     background: #222;
-    color: white;
+    color: #ffffff;
 }
 
 .text-black {
