@@ -4,7 +4,7 @@
 </div>
 
 ## About
- [Jolie Mimi Boutique](https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com/)is an ecommerce platfom as a ladies' boutique, dealing with the latest, chick and trendy clothes alongside some jewellery items, developed on Django. It encompasses user registration, profile management, newsletter subscriptions, and product purchases facilitated by Stripe. Users of Jolie Mimi Boutique can submit their reviews about the products they have bought or want to buy. Frontend admin controls empower easy management of products and users. In addition, the website has a functionality that is a live chat, this live chat can be controlled by the shop owner/staff and could be limited to one or more staff depending on the average number of customers serving. Via this chat facility customer can interact with the customercare staff and be more comfortable before buying anything and can get help regarding the product or services provided by the website.
+ [Jolie Mimi Boutique](https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com/)is an ecommerce platfom as a ladies' boutique, dealing with the latest, chick and trendy clothes alongside some jewellery items, developed on Django. It encompasses user registration, profile management, newsletter subscriptions, and product purchases facilitated by Stripe. Users of Jolie Mimi Boutique can submit their reviews about the products they have bought or want to buy. Frontend admin controls empower easy management of products and users. In addition, the website has a functionality that is a live chat, this live chat can be controlled by the shop owner/staff and could be limited to one or more staff depending on the average number of customers serving. Via this chat facility customer can interact with the customer care/sales staff to get instant help before buying any product or service provided by the website.
 
 ---
 
@@ -16,11 +16,6 @@
 ![Main image](readme-images/main-page.jpeg)
 
 **Card number for payment testing: 4242424242424242**
-
-
-### Target Audience
-
- Our online boutique, where elegance meets empowerment! We pride ourselves on offering a curated selection of the latest fashion trends to make every woman feel confident and stylish. From chic dresses perfect for a night out to sophisticated workwear that commands attention, our collection caters to ladies and young girls who seek to express their unique personalities through fashion. Our easy-to-navigate website ensures a delightful shopping experience from the comfort of your home, where you can explore, browse, and discover pieces that resonate with your style. Join us online, where fashion dreams come true and every outfit tells your story. This website may hold many products, and it is essential to make sure that the website is easy to use and navigate. It is also a platform where two cultures join together which means not only Western but even Indian clothes can also be purchased from the same website.
  
 
 ## Table of Contents
@@ -66,19 +61,12 @@
     - [Footer](#footer)
     - [Product List](#product-list)
     - [Product Detail](#product-detail)
-    - [Ratings](#ratings)
-    - [Blog List](#blog-list)
-    - [Blog Detail](#blog-detail)
-    - [Comment Section](#comment-section)
-    - [Post Update](#post-update)
     - [Contact Page](#contact-page)
     - [FAQ Page](#faq-page)
     - [Profile Page](#profile-page)
-    - [Newsletter Subscription Management](#newsletter-subscription-management)
     - [Bag Page](#bag-page)
     - [Toasts Including Bag Preview](#toasts-including-bag-preview)
     - [Product Management](#product-management)
-    - [Blog Management](#blog-management)
     - [Checkout](#checkout)
     - [Checkout Success](#checkout-success)
     - [Authentication Pages](#authentication-pages)    
@@ -146,52 +134,51 @@ All user stories can be found in the linked GitHub project [here](https://github
 ## Visual Design
 ### Wireframes
 
-All wireframes can be found via this link to the GitHub folder [here](https://github.com/leec313/Fetch-and-Feast/blob/main/readme-images/wireframes)
+All wireframes can be found via this link to the GitHub folder [here](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/tree/main/readme-images/wireframes)
 
 ### Fonts
 
 - **Logo:** 
-**[Protest Strike Font](https://fonts.google.com/specimen/Protest+Strike):** Protest Strike is a bold and impactful display font that adds a rebellious and edgy vibe to your project. With its strong, stencil-like appearance, Protest Strike commands attention and makes a statement, perfect for conveying a sense of activism or boldness in your design. Its distinct letterforms and unique style give your project a standout aesthetic, while still maintaining legibility for titles and headings.
-**[Dancing Script Font](https://fonts.google.com/specimen/Dancing+Script):** Dancing Script is a playful and elegant script font that brings a touch of whimsy and sophistication to your project. With its flowing, cursive letterforms and graceful strokes, Dancing Script adds a sense of charm and personality to your design, making it ideal for conveying a sense of warmth and friendliness.
+- **Logo:** 
+**[Nunito](https://fonts.google.com/specimen/Nunito?query=Nunito):** Nunito is an impactful display font that adds a rebellious vibe to an e-commerce platform. With its simple & clear appearance, Nunito commands smoothness and makes a clear statement, perfect for conveying a sense of activism or boldness in the design. Its distinct letterforms and unique style give to the project a standout aesthetic, while still maintaining legibility for titles and description.
+
+**[Jaini](https://fonts.google.com/?preview.text=Jolie-Mimi-Boutique&query=Jaini):** Jaini is a font that can suit any type of logo, but its unique and mixed italic style makes the name Jolie Mimi Boutique look more elegant and clear, adding to its sophistication. 
 Both Protest Strike and Dancing Script were used for my logo - they excellently contrast each other. 
-- **Clean Aesthetic: [Lato](https://fonts.google.com/specimen/Lato)** (used for the rest of my site) is a sans-serif font with a clean and modern aesthetic, making it suitable for a wide range of design applications. Its simplicity and readability contribute to a professional and polished look for the project.
-- **Universal Legibility:** Choosing sans-serif as the backup ensures universal legibility, especially on screens and digital platforms. Sans-serif fonts are known for their clarity and readability, making them a reliable fallback option in case any issues arise with the primary or secondary font choices. I also used cursive as the backup font for Dancing Script in the logo. 
+
+**[Sans-serif]** Choosing sans-serif as the backup ensures universal legibility,especially on screens and digital platforms. Sans-serif fonts are known for their clarity and readability, making them a reliable fallback option in case any issues arise with the primary or secondary font choices. I also used cursive as the backup font for Dancing Script in the logo. 
+
 
 
 ### Colors
 
 <div align="center">
- <img src="https://github.com/leec313/Fetch-and-Feast/blob/main/readme-images/pallette.png?raw=true" alt="colors">
+ <img src="" alt="colors">
 </div>
 
 In crafting the color palette for this project, I aimed to strike a perfect balance between vibrancy, clarity, and visual appeal. Let's delve into why each color was carefully chosen:
 
-- **Black (#000000) for the Logo**: Black, being classic and versatile, provides a strong foundation for our logo. Its timeless appeal ensures that our brand identity stands out boldly against lighter backgrounds, guaranteeing excellent readability and visibility. Plus, black exudes professionalism and sophistication, aligning perfectly with our brand's ethos.
+- **Off Pink (#e12656) for the Logo**: Off Pink, kind a fushia colour is a bit unique and girlish colour which suits the best for our ladies' fashion boutique, being a classic and glossy look provides a strong combination of our logo and the delivery banner and follow the line down to shop now button. Its timeless appeal ensures that our brand identity stands out boldly against lighter backgrounds, guaranteeing excellent readability and visibility. Plus, base pink exudes professionalism and sophistication, aligning perfectly with our brand's ethos.
     
 - **White (#FFFFFF) for the Background**: White serves as the canvas upon which all other colors and content come to life. Its clean and neutral nature creates a sense of spaciousness and cleanliness, enhancing readability and user experience. A white background exudes simplicity and elegance, perfectly complementing various design styles.
     
-- **Dark Green (#0a8362) for Buttons, Links, Headers, and Icons**: #0a8362 is a darker shade of teal-green. It carries a rich and deep tone that exudes sophistication and depth. This color combines the vibrancy of green with the calming qualities of teal, resulting in a hue that is both bold and grounded.
-    
-- **Red (#DC3545) for Errors and Delete Buttons**: Red, particularly #DC3545, serves as a signal for alerts, warnings, or errors. Its darker hue maintains visibility while conveying a sense of urgency or caution. By using this color for error messages and delete buttons, we ensure that users take notice and proceed with care when necessary.
+- **Yellow (#ffc107) for Buttons, messages background**: #ffc107 is a darker shade of yellow. It carries a rich and deep tone that exudes sophistication and depth. This color combines the vibrancy of yellow with the calming qualities, resulting in a hue that is both bold and grounded.
     
 
-In essence, our color palette embodies simplicity and vibrancy, creating a visually appealing and user-friendly experience. The combination of classic black, pristine white, lively teal/green, and alerting red forms a cohesive design that effectively communicates our brand's message. This palette also allows our vibrant product and blog imagery to shine, creating a dynamic and engaging platform for our audience.
+In essence, our color palette embodies simplicity and vibrancy, creating a visually appealing and user-friendly experience. The combination of classic pink, pristine white, and lively yellow forms a cohesive design that effectively communicates our brand's message. This palette also allows our vibrant product and brand name to shine, creating a dynamic and engaging platform for our audience.
 
 ## Agile Development
 
-The journey of Fetch & Feast began with the establishment of a GitHub Projects Page, serving as the central hub for project management. This platform played a pivotal role in organizing tasks systematically, creating user stories, and breaking them down into actionable steps. The overarching goal was to create a structured roadmap that would guide the project towards successful completion within the designated timeframe. Utilizing the GitHub Projects Page enabled the tracking of the project's evolution, assignment of tasks, and achievement of milestones, ensuring a smooth and organized development process. The MoSCoW method, alongside customized GitHub project labels, was instrumental in assisting me in prioritizing essential tasks within the constraints of my available time.
+The journey of Jolie Mimi Boutique began with the establishment of a GitHub Projects Page, serving as the central hub for project management. This platform played a pivotal role in organizing tasks systematically, creating user stories, and breaking them down into actionable steps. The overarching goal was to create a structured roadmap that would guide the project towards successful completion within the designated timeframe. Utilizing the GitHub Projects Page enabled the tracking of the project's evolution, assignment of tasks, and achievement of milestones, ensuring a smooth and organized development process. The MoSCoW method, alongside customized GitHub project labels, was instrumental in assisting me in prioritizing essential tasks within the constraints of my available time.
 
 To view the:
 
-* project Kanban board, [please follow this link.](https://github.com/users/leec313/projects/3)
-* milestones, [please follow this link.](https://github.com/leec313/Fetch-and-Feast/milestones)
-* issues, [please follow this link.](https://github.com/leec313/Fetch-and-Feast/issues?q=is%3Aissue)
+* project Kanban board, issues [please follow this link.](https://github.com/users/Mr-KulwinderSingh/projects/8)
 
 ### Project Milestones
 
 The project was divided into several key milestones, each representing a significant phase in the development process. Within each milestone, epics were identified, representing broader themes or features to be implemented. These epics were further broken down into user stories, representing specific functionalities or requirements from the user's perspective. Finally, tasks were defined within each user story, representing the individual steps needed to fulfill the user story's objectives.
 
-### Example Milestones, Epics, User Stories, and Tasks (not representative of the actual project):
+### Example Milestones, Epics, User Stories, and Tasks (Not Representative of the Actual Project):
 
 1. **Milestone 1: Project Setup**
     
@@ -223,7 +210,7 @@ The project was divided into several key milestones, each representing a signifi
 
 ### Project Progression
 
-The project evolved iteratively, with each milestone representing a significant step forward in the development process. Tasks within each milestone were completed incrementally, with regular reviews and adjustments made to ensure alignment with project goals and user requirements. As tasks were completed, they were moved across the Kanban board, providing a clear visual representation of progress and remaining work.
+The project evolved iteratively, with each milestone representing a significant step forward in the development process. Tasks within each milestone were completed incrementally, with regular reviews and adjustments made to ensure alignment with project goals and user requirements.
 
 In summary, the use of project milestones, epics, user stories, and tasks, coupled with effective project management tools like GitHub Projects and Kanban boards, facilitated a structured and organized approach to building Fetch & Feast.
 
@@ -245,32 +232,44 @@ In summary, the use of project milestones, epics, user stories, and tasks, coupl
     - **Account Dropdown:**
         - For logged-out users, the account dropdown provides options to log in or sign up for an account.
         - Logged-in users have access to their profile, enabling them to manage their account settings, view orders, and access additional features.
-        - Superusers have additional options for product and blog management, allowing them to oversee content creation and updates.
+        - Superusers have additional options for product management, allowing them to oversee content creation and updates.
     - **Main Navigation:**
-        - Positioned below the account dropdown, the main navigation menu offers dropdown options for each page category, including Products, Blogs, Help, and More.
+        - Positioned below the account dropdown, the main navigation menu offers dropdown options for each page category, Product and More.
         - Each dropdown menu provides access to specific sections or pages related to the respective category, enhancing navigation efficiency for users.
 
 - **Hero Image:**
 
-    -  The main homepage features a large and visually striking hero image that immediately captures the user's attention.
+    - The main homepage showcases a large, visually striking hero image that instantly grabs the user's attention. High-quality hero image shows a girl sitting on an elevator, appealing to female customers with trendy fashion clothes and jewelry. 
     - A prominent call-to-action button invites users to enter and explore the site's products.
 
 <div align="center">
- <img src="https://github.com/leec313/Fetch-and-Feast/blob/main/readme-images/hero-nav.png?raw=true" alt="hero-image-and-nav">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/3d3a0259-23cf-41f7-8053-dfc49b01c3cf" alt="hero-image-and-nav">
 </div>
 <div align="center">
- <img src="https://github.com/leec313/Fetch-and-Feast/blob/main/readme-images/hero-nav-mobile.png?raw=true" alt="hero-image-and-nav-mobile">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/b0c6d87b-b9d6-454c-a77d-ca430e8b542b" alt="hero-image-and-nav-mobile">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/1c735239-0d1c-4e01-9b0b-05c21438109a" alt="hero-image-and-nav-mobile">
 </div>
 
-- **Featured Products:**
+- ### Footer
     
-    - Below the hero image, four featured products are showcased.
-    - These products are selected based on the highest average ratings, ensuring that users see the most popular items first.
-    - A "View All" button allows users to easily access the full range of products available on the site.
+    - The footer section of the website offers convenient navigation and essential information for users.
+    - **Contact Us:**
+        - Includes links to the contact page and FAQ section, providing users with quick access to assistance and support.
+        - **FAQs :**
+        This link leads to the FAQ section, providing users with quick access to answers of Frequently Asked Questions.
+    - **My Account Column:**
+        - For logged-out users, this column features options to log in or sign up for an account.
+        - Logged-in users have access to their profile, allowing them to manage their account settings, and sign out if needed.
+        - Superusers have additional options for product management, enabling them to oversee content creation and updates.
+    - **Contact Info:**
+        - Includes essential contact details are the most important links for the customers, for their convenience most appropriate contact link is whatsapp, through this they can be redirected to WhatsApp on their mobile phone and chat about the product & services, real link has been given through the site. Next to this is email the for the customers who want to be contacted via email. Telephone number is next in the list and last link address with the google map. Contact details such as phone number, email address, and location, ensure users can reach out for assistance or inquiries. 
+    - **Social Media and Legal Links:**
+        - Features a link to the site's Facebook page, facilitating social media engagement and community interaction.
+        - Includes copyright information and a link to the privacy policy, ensuring compliance with legal requirements and providing transparency to users regarding data usage and privacy practices.
 
 <div align="center">
- <img src="https://github.com/leec313/Fetch-and-Feast/blob/main/readme-images/featured-products.png?raw=true" alt="featured-products">
+ <img src="" alt="footer">
 </div>
 <div align="center">
- <img src="https://github.com/leec313/Fetch-and-Feast/blob/main/readme-images/featured-products-mobile.png?raw=true" alt="featured-products-mobile">
+ <img src="" alt="footer-mobile">
 </div>
