@@ -64,7 +64,7 @@
     - [Contact Page](#contact-page)
     - [FAQ Page](#faq-page)
     - [Profile Page](#profile-page)
-    - [Bag Page](#bag-page)
+    - [Cart Page](#cart-page)
     - [Toasts Including Bag Preview](#toasts-including-bag-preview)
     - [Product Management](#product-management)
     - [Checkout](#checkout)
@@ -139,7 +139,6 @@ All wireframes can be found via this link to the GitHub folder [here](https://gi
 ### Fonts
 
 - **Logo:** 
-- **Logo:** 
 **[Nunito](https://fonts.google.com/specimen/Nunito?query=Nunito):** Nunito is an impactful display font that adds a rebellious vibe to an e-commerce platform. With its simple & clear appearance, Nunito commands smoothness and makes a clear statement, perfect for conveying a sense of activism or boldness in the design. Its distinct letterforms and unique style give to the project a standout aesthetic, while still maintaining legibility for titles and description.
 
 **[Jaini](https://fonts.google.com/?preview.text=Jolie-Mimi-Boutique&query=Jaini):** Jaini is a font that can suit any type of logo, but its unique and mixed italic style makes the name Jolie Mimi Boutique look more elegant and clear, adding to its sophistication. 
@@ -152,7 +151,7 @@ Both Protest Strike and Dancing Script were used for my logo - they excellently 
 ### Colors
 
 <div align="center">
- <img src="" alt="colors">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/3fbf3f1d-e495-48e4-8fe2-89d52bf110e6" alt="colors">
 </div>
 
 In crafting the color palette for this project, I aimed to strike a perfect balance between vibrancy, clarity, and visual appeal. Let's delve into why each color was carefully chosen:
@@ -268,8 +267,163 @@ In summary, the use of project milestones, epics, user stories, and tasks, coupl
         - Includes copyright information and a link to the privacy policy, ensuring compliance with legal requirements and providing transparency to users regarding data usage and privacy practices.
 
 <div align="center">
- <img src="" alt="footer">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/64c9ad05-c6a6-45dc-8d32-c118684d9b1b" alt="footer">
+</div>
+
+- Mobile
+
+<div align="center">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/5e2fb208-25fb-4733-8cc5-b8a946a4462c" alt="footer-mobile">
+</div>
+
+## Web Marketing
+
+Newsletters were implemented in the email_notification app. The manager can create a newsletter and send it to all customers. It also handles sending newsletters about new loyalty programs with promo codes.
+
+1. News Letter/ Subscribtion
+
+To send a newsletter to all customers, the manager can create a newsletter and send it to all customers.
+I have used Django EmailMultiAlternatives to send the newsletter.
+
+![NewsLetter]()
+
+2. Discounts and offers
+
+To send a newsletter about new loyalty programs, offers, and discounts to all customers, the manager/admin can create a newsletter using the same form with a promo code field filled with a legend. Django EmailMultiAlternatives is also responsible for it.
+
+
+
+3. Facebook
+
+Facebook is essential for the store to be able to reach customers. According to the statistics, the store has a good reach among people who prefer to use Facebook. Facebook has excellent coverage worldwide among people who can purchase products online.
+
+"Jolie Mimi Boutique" Facebook page is for marketing purposes to post adverts and exciting content and engage users.
+
+![Jolie Mimi Boutique](readme-images/facebook-page.jpeg)
+
+Please follow the links to see more images:
+
+[facebook-page](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/3c0ef45f-6715-4a48-b8f6-37c3c99b3f12)
+
+[facebook-page-2](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/a1f880bc-70c8-4721-b632-3d3d911914bd)
+
+[facebook-page-3](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/1c23a8f0-86af-4dbd-b96a-f2a0983d0068)
+
+
+4. Instagram
+
+Instagram attracts people of younger ages and is essential for the store to be able to reach this age group. According to the statistics, 90% of Instagram users are under 35 years old. [See report](https://info.lse.ac.uk/staff/divisions/communications-division/digital-communications-team/assets/documents/guides/A-Guide-To-Social-Media-Platforms-and-Demographics.pdf)
+
+"Jolie Mimi Boutique" Instagram page is for marketing purposes to post adverts, interesting content, and engage users.
+
+![Jolie Mimi Boutique](readme-images/instagram.jpeg)
+
+
+- ### Product List
+    - The product list feature provides users with a straightforward and intuitive way to browse through available products.
+    - **Display Format:**
+        - Products are presented in individual cards, each containing essential information such as the product image, name, rating, reviews,selling price, (discounted price, for future development) and category.
+        - For superusers, additional options to edit/update and delete products are available directly within the product cards.
+    - **Pagination:**
+        - To enhance usability and manageability, the product list displays a maximum of 4 products in a row and scroll-down button can show all of them.
+        - If user wants to go back and have a look at particular one which was at the top row of the page, He can use the 'Back to Top' button, which is located at the bottom right corner of the page.
+
+<div align="center">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/d963d3ae-47cd-4bfe-b6dd-0db609038ee8
+" alt="products">
 </div>
 <div align="center">
- <img src="" alt="footer-mobile">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/4709e570-cff5-4272-b516-778f44bae65f" alt="products-mobile">
+</div>
+
+- ### Product Detail
+    - The product detail section on the product page provides users with comprehensive information about the selected product.
+    - **Content Displayed:**
+        - Product Name: Clearly identifies the product for users.
+        - Price: Displays the price of the product, allowing users to make informed purchasing decisions.
+        - Average Rating: Shows the average rating of the product based on user reviews from the ratings model, providing social proof and credibility.
+        - Category: Indicates the category to which the product belongs, aiding users in navigation and organization.
+        - Edit/Delete Links (for Superusers): Allows superusers to perform administrative actions such as editing or deleting the product directly from the product detail page.
+        - Product Description: Provides a detailed description of the product, highlighting its features and benefits.
+        - Quantity Selector: Enables users to select the desired quantity of the product before adding it to their shopping bag.
+        - "Keep Shopping" Button: Offers users the option to continue browsing other products without leaving the current page.
+        - "Add to Bag" Button: Allows users to add the selected quantity of the product to their shopping bag, initiating the checkout process.
+    - **Product Image:**
+        - The product image is prominently displayed within the product detail section.
+        - A simple Bootstrap popup modal is implemented to allow users to view a larger version of the product image if desired, enhancing the user experience by providing a closer look at the product.
+
+<div align="center">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/ebd363f3-9e4a-46c8-8a4b-4851f9745ea8" alt="products">
+</div>
+
+- ### Reviews
+
+    - The `product_detail` view renders the reviews.
+    - Reviews for the products are retrieved from the database and paginated for easy navigation.
+    - Users can submit a review of the product by using a very easy form, with validation to ensure proper input.
+    - A check is performed to determine if the current user has an account, allowing only verified account holders to submit reviews.
+    - Profile names of users who submitted reviews are displayed alongside the date and stars, enhancing the credibility of the ratings and reviews.
+    - Superusers can edit or delete individual reviews/ratings through dedicated updated reviews.
+.
+
+<div align="center">
+ <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/87704023-b1a2-44d8-8009-052eb354d621" alt="reviews">
+</div>
+
+
+## Technologies used
+- ### Languages:
+    
+    + [Python 3.8.5](https://www.python.org/downloads/release/python-385/): the primary language used to develop the server-side of the website.
+    + [JS](https://www.javascript.com/): the primary language used to develop interactive components of the website.
+    + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
+    + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
+
+- ### Frameworks and libraries:
+
+    + [Django](https://www.djangoproject.com/): python framework used to create all the logic.
+    + [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
+    + [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
+
+- ### Databases:
+
+    + [SQLite](https://www.sqlite.org/): was used as a development database.
+    + [PostgreSQL](https://www.postgresql.org/): the database used to store all the data.
+
+
+- ### Other tools:
+
+    + [Git](https://git-scm.com/): the version control system used to manage the code.
+    + [Pip3](https://pypi.org/project/pip/): the package manager used to install the dependencies.
+    + [Gunicorn](https://gunicorn.org/): the web server used to run the website.
+    + [Psycopg2](https://www.psycopg.org/): the database driver used to connect to the database.
+    + [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
+    + [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
+    + [Render](https://pypi.org/project/render/): was used to render the README file.
+    + [GitHub](https://github.com/): used to host the website's source code.
+    + [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
+    + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+    + [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
+    + [Draw.io](https://www.lucidchart.com/) was used to make a flowchart for the README file.
+    + [Color-hex](https://www.color-hex.com/) was used to make a colour palette for the website.
+    + [Photoroom](https://www.photoroom.com/) was used to edit and change the background of all the pictures, all pictures are real and taken with Redmi 12 5g mobile. 3 pictures are downloaded from google.
+    + [BGJar](https://www.bgjar.com/): was used to make a background images for the website.
+    + [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
+    + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
+    + [JShint](https://jshint.com/): was used to validate JS code for the website.
+    + [PEP8](https://pep8.org/): was used to validate Python code for the website.
+    + [geonames](https://www.geonames.org/) was used to get the country and city names.
+    + [Multiple Video & Image Upload Plugin - jQuery Miv.js](https://www.jqueryscript.net/form/multi-video-image-upload.html) was used to upload multiple videos and images. **Note:** the plugin  is using special characters in css and js files that I am aware about!
+    + [stripe](https://stripe.com/): was used to create the payment system.
+    + [birme.net](https://www.birme.net/): was used to crop and center unsplash images.
+    + [Sitemap Generator](https://www.xml-sitemaps.com/) was used to create the sitemap.xml file.
+    + [Privacy Policy Generator](https://www.privacypolicygenerator.info/) was used to create the privacy policy.
+    + [Django-extensions](https://django-extensions.readthedocs.io/en/latest/) was used to create a Entity-Relationship Diagram.
+
+# Webhooks
+    
+- The site uses a secure and robust webhook system to ensure that the payment process cannot be interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in `checkout > webhook_handler.py` and `checkout > webhooks.py`
+
+<div align="center">
+ <img src="" alt="stripe-webhooks">
 </div>
