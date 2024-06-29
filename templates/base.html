@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,11 +8,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Kulwinder Singh">
     {% endblock %}
 
     {% block extra_meta %}
-    <meta name="description" content="jolie_mimi_boutique Ireland's first indo western boutique">
-    <meta name="keywords" content="midi, maxi, gowns, debs, dresses, long  or short, strapless, cord-set, ball gown, jumpsuit, bodycon, wrap, top, skirt">
+    <meta name="description" content="jolie_mimi_boutique Ireland's first indo western ladies boutique">
+    <meta name="keywords" content="Ladies clothes, gowns, dresses, suits, Indian suits, maxi, midi, skirts, tops">
     {% endblock %}
 
     {% block corecss %}
@@ -27,6 +27,7 @@
     {% block extra_css %}
     <!-- mailchimp stylesheet link -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'media/favicon-32x32.png' %}">
     {% endblock %}
 
     {% block core_js %}
@@ -37,11 +38,9 @@
         <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
-
-    <title>Jolie Mimi Boutique {% block extra_title %}{% endblock %}</title>
+    <title>Joliemimi~Boutique {% block extra_title %}{% endblock %}</title>
   </head>
+
   <body>
     <header class="container-fluid fixed-top">
         <!-- <div id="welcome-banner" class="row text-center">
@@ -51,12 +50,10 @@
         </div> -->
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex ">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <!--Logo-->
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-only text-danger my-0"><strong>Jolie-Mimi</strong>~boutique</h2>
                 </a>
             </div>
-            <!--Searchbar for products-->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
@@ -71,7 +68,6 @@
                     </div>
                 </form>
             </div>
-            <!--My Account dropdown & Cart-->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -82,15 +78,12 @@
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            <!--If user is logged in show My profile and Logout-->
                             {% if request.user.is_authenticated %}
-                            <!--If superuser logged in, show Product Management along with My profile and logout-->
                                 {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                <!--If not logged in, show Register/Login-->
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -110,10 +103,8 @@
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
-                                    <!--If cart total exists, show the total with two decimal points-->
                                     {% if grand_total %}
-                                    €{{ grand_total|floatformat:2 }}
-                                    <!--Else show 0 euro-->
+                                        €{{ grand_total|floatformat:2 }}
                                     {% else %}
                                         €0.00
                                     {% endif %}
@@ -125,15 +116,13 @@
             </div>
         </div>
         <div class="row bg-white">
-            <!--Mobile Nav - Icon only shown on small/med screens - custom css in base.css-->
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle-navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!--Show mobile top header for mobile only-->
                 {% include 'includes/mobile-top-header.html' %}
-                <!--Show main nav for both mobile and desktop-->
                 {% include 'includes/main-nav.html' %}
+            </nav>
         </div>
         <div id="delivery-banner" class="text-center">
             <div class="col flex-column bg-delivery-banner text-white rounded">
@@ -141,7 +130,7 @@
             </div>            
         </div>
     </header>
-    <!--If any messages, they will display in this container-->
+    
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -160,9 +149,6 @@
         </div>
     {% endif %}
 
-    <!--Below blocks for other pages, 
-    will display each block when called within the base template-->
-
     {% block page_header %}
     {% endblock %}
 
@@ -175,8 +161,10 @@
     {% block content %}
     {% endblock %}
 
-      <!--Footer beginning-->
-      <footer class="col-10 mt-5 offset-1 transparent rounded text footer-col text-center">
+</body>
+
+    <!--Footer beginning-->
+<footer class="col-10 mt-5 offset-1 transparent rounded text footer-col text-center">
         <div class="row">
             <!--Help Column-->
             <div class="col-md-2 mt-2 text-center">
@@ -237,14 +225,14 @@
                     <li><a class="text-decoration-none footer-contact text-black">
                             <i class="fa-solid fa-phone"></i>
                             +353-123456</a></li>
-                            <span class="d-flex my-2">
+                            <li class="d-flex my-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                     class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                                 </svg>
                                 <a href="https://maps.app.goo.gl/JjcY7xLdVh3GYLLU8"
                                     class="mx-2 text-muted">73 Dublin Road, Longford, Ireland</a>
-                            </span>
+                                </li>
                 </ul>
             </div>
             <div class="col-md-2 mt-2 text-center">
@@ -285,9 +273,9 @@
                                         </div>
                                     </div>
                                 </div>
+                            </form>
                   </div>
                  </div>
-                  </div>
             </div>
         </div>
         <!--Copyright/Social/Privacy Policy-->
@@ -300,9 +288,9 @@
             </div>
         </div>
     </footer>
-    <!--JS to call toasts-->
+
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}
@@ -316,8 +304,8 @@
             }).delay(3000).fadeOut('slow');
         });
     </script>
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
+    <script  src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script>
         (function ($) {
             window.fnames = new Array();
             window.ftypes = new Array();
@@ -337,7 +325,7 @@
         var $mcj = jQuery.noConflict(true);
     </script>
     <!--Start of Tawk.to Script-->
-<script type="text/javascript">
+<script>
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -349,6 +337,4 @@
     })();
     </script>
     <!--End of Tawk.to Script-->
-
-</body>
 </html>
