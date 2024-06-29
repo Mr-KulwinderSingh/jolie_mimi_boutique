@@ -12,8 +12,8 @@
     {% endblock %}
 
     {% block extra_meta %}
-    <meta name="description" content="jolie_mimi_boutique is all about women's wear who love to shop online. Trendy, chick dresses of their favourite style/colour and sizes etc.">
-    <meta name="keywords" content="midi, maxi, gowns, debs dresses, long  or short dresses, strapless, cord-set, bodice gown, ball gown, jumpsuit, bodycon, wrap,">
+    <meta name="description" content="jolie_mimi_boutique Ireland's first indo western boutique">
+    <meta name="keywords" content="midi, maxi, gowns, debs, dresses, long  or short, strapless, cord-set, ball gown, jumpsuit, bodycon, wrap, top, skirt">
     {% endblock %}
 
     {% block corecss %}
@@ -40,7 +40,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Joliemimi~Boutique {% block extra_title %}{% endblock %}</title>
+    <title>Jolie Mimi Boutique {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
     <header class="container-fluid fixed-top">
@@ -51,10 +51,12 @@
         </div> -->
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex ">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                <!--Logo-->
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-only text-danger my-0"><strong>Jolie-Mimi</strong>~boutique</h2>
                 </a>
             </div>
+            <!--Searchbar for products-->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
@@ -69,6 +71,7 @@
                     </div>
                 </form>
             </div>
+            <!--My Account dropdown & Cart-->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -79,12 +82,15 @@
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <!--If user is logged in show My profile and Logout-->
                             {% if request.user.is_authenticated %}
+                            <!--If superuser logged in, show Product Management along with My profile and logout-->
                                 {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <!--If not logged in, show Register/Login-->
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -104,8 +110,10 @@
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
+                                    <!--If cart total exists, show the total with two decimal points-->
                                     {% if grand_total %}
-                                        €{{ grand_total|floatformat:2 }}
+                                    €{{ grand_total|floatformat:2 }}
+                                    <!--Else show 0 euro-->
                                     {% else %}
                                         €0.00
                                     {% endif %}
@@ -117,11 +125,14 @@
             </div>
         </div>
         <div class="row bg-white">
+            <!--Mobile Nav - Icon only shown on small/med screens - custom css in base.css-->
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle-navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!--Show mobile top header for mobile only-->
                 {% include 'includes/mobile-top-header.html' %}
+                <!--Show main nav for both mobile and desktop-->
                 {% include 'includes/main-nav.html' %}
         </div>
         <div id="delivery-banner" class="text-center">
@@ -130,7 +141,7 @@
             </div>            
         </div>
     </header>
-    
+    <!--If any messages, they will display in this container-->
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -148,6 +159,9 @@
             {% endfor %}
         </div>
     {% endif %}
+
+    <!--Below blocks for other pages, 
+    will display each block when called within the base template-->
 
     {% block page_header %}
     {% endblock %}
@@ -286,6 +300,7 @@
             </div>
         </div>
     </footer>
+    <!--JS to call toasts-->
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');

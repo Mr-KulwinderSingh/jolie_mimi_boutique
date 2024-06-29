@@ -37,6 +37,7 @@
             </form>
         </div>
         <div class="col-12 col-lg-6">
+            <!--Order history table-->
             <p class="text-muted">Order History</p>
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless">
@@ -82,10 +83,10 @@
         </div>
     </div>
 {% endblock %}
-
-<!-- {% block postloadjs %}
+<!--Country field JS logic for user profile form-->
+{% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
-{% endblock %} -->
+{% endblock %}
 
 
