@@ -1,4 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, 
+    redirect, 
+    reverse, 
+    get_object_or_404, 
+    HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -15,6 +21,10 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache checkout data including cart contents, save_info option,
+    and user information in the PaymentIntent metadata.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
