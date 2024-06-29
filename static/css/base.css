@@ -13,6 +13,7 @@ body {
     font-family: Nunito, sans-serif;
 }
 
+/* Glow effect for home image text */
 .glow {
     color: hsl(230, 78%, 68%);
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #fff;
@@ -144,15 +145,18 @@ input[name='q']::placeholder {
 .border-black {
     border: 1px solid black !important;
 }
-
-.bg-welcome-banner {
+/* future development */
+/* .bg-welcome-banner {
     background: hsl(50, 90%, 50%);
-}
+} */
+
+/* Delivery banner /*/
 
 .bg-delivery-banner {
     background: #e12656;
 }
 
+/* ------------------------------- bootstrap toasts */
 .message-container {
     position: fixed;
     top: 72px;
@@ -338,7 +342,7 @@ input[name='q']::placeholder {
         padding-top: 164px;
     }
 
-    /* <!-- Style to be applied --> */
+    /* <!-- Style to be applied future development--> */
 
     /* .nav-link::before {
         content: "";
