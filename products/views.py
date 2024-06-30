@@ -24,8 +24,7 @@ def shop_all(request):
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'Category':
-                sortkey = 'category__name'
-                
+                sortkey = 'category__name'  
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -38,7 +37,6 @@ def shop_all(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -46,9 +44,10 @@ def shop_all(request):
                     request,
                     "You did not enter any search criteria"
                 )
-                return redirect(reverse ('products'))
+                return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -59,8 +58,8 @@ def shop_all(request):
         'current_categories': categories,
         'current_sorting': current_sorting,
     }
-    
-    return render (request, 'products/products.html', context)
+
+    return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
@@ -73,8 +72,8 @@ def product_detail(request, product_id):
         'product': product,
         'form': form,
     }
-    
-    return render (request, 'products/product_detail.html', context)
+
+    return render(request, 'products/product_detail.html', context)
 
 
 @login_required
@@ -104,6 +103,7 @@ def add_review(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
 
 @login_required
 def edit_review(request, review_id):
@@ -137,11 +137,12 @@ def edit_review(request, review_id):
     }
     return render(request, template, context)
 
+
 @login_required
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
-        messages.error(request,'Sorry only store owner can do that.')
+        messages.error(request, 'Sorry only store owner can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -152,10 +153,9 @@ def add_product(request):
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
-                request, 'Failed to add product. Please ensure the form is valid.')
+                request, 'Failed to add product. Check if the form is valid.')
     else:
-        form = ProductForm()
-        
+        form = ProductForm() 
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -163,12 +163,13 @@ def add_product(request):
 
     return render(request, template, context)
 
+
 @login_required
 def edit_product(request, product_id):
     """ Edit/Update an existing product """
 
     if not request.user.is_superuser:
-        messages.error(request,'Sorry only store owner can do that.')
+        messages.error(request, 'Sorry only store owner can do that.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -179,11 +180,13 @@ def edit_product(request, product_id):
             messages.success(request, 'Product updated successfully')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid')
+            messages.error(
+                request, 'Failed to update product. Ensure the form is valid')
     else:
 
         form = ProductForm(instance=product)
-        messages.info(request, f'You are editing/updating the details of {product.name}')
+        messages.info(
+            request, f'You are editing/updating the details of {product.name}')
 
     template = 'products/edit_product.html'
     context = {
@@ -193,11 +196,12 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_product(request, product_id):
     """ Delete an existing product """
     if not request.user.is_superuser:
-        messages.error(request,'Sorry only store owner can do that.')
+        messages.error(request, 'Sorry only store owner can do that.')
         return redirect(reverse('home'))
         
     product = get_object_or_404(Product, pk=product_id)

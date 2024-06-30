@@ -1,6 +1,6 @@
 # Testing
 
-Return back to the [README.md](https://github.com/leec313/Fetch-and-Feast/blob/main/README.md) file.
+Return back to the [README.md](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/blob/main/README.md) file.
 
 ## Code Validation
 
@@ -30,3 +30,43 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | W3C URL | Screenshot | Notes |
 | --- | --- | --- |
 | [Jigsaw](https://jigsaw.w3.org/css-validator/) | ![base_css](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/41c6e690-e185-42bf-bc48-681bbf37f604) | Pass: No Errors |
+
+
+## Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) to validate all of my Python files. Along the way I have made sure my code was clean by using the Pep8 and Flake8 addons within GitPod.
+
+### Cart
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| contexts.py | ![context](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/904daa9a-9ce3-42a1-8a03-9950634b85cb) | Pass: No Errors |
+| urls.py | ![urls_cart](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/09c059dd-ec16-487d-814a-e964e52314c5) | Pass: No Errors |
+| views.py | ![views_cart](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/750c3ccd-0922-49ef-9c0c-463b9a6b74f8) | 1 Error |
+
+### Checkout
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| admin.py | ![admin_checkout](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/942b923f-f359-4dcb-9799-862e4ca656f8) | Pass: No Errors |
+| forms.py | ![forms](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/713570b9-13a1-4ab6-8583-2f547a5507b1) | Pass: No Errors |
+| models.py | ![models](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/b95def2b-9c07-4050-8c54-6545ae8dabc7) | Pass: No Errors |
+| signals.py | ![signals_checkout](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/7902ffd4-0743-4bdc-bca6-3571b258a879) | Pass: No Errors |
+| urls.py | ![urls](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/5ae508de-23aa-4bc9-833c-b43c93fc11b1) | 1 Errors |
+| views.py | ![views_checkout](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/dabaa8d1-d0c5-4525-b607-f220e27de2a8) | Pass: No Errors |
+| webhook-handler.py | ![webhook_hander](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/2f00694b-7381-4358-b6a8-b3c261543eba) | Pass: No Errors |
+| webhooks.py | ![webhooks1](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/6e42cba3-2fe5-4915-be33-ea8070057a41) | Pass: No Errors |
+
+### Home
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| urls.py | ![home_url](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/08502b80-3103-4a18-87d5-3c58b4c326ed) | Pass: No Errors |
+
+
+### Products
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| admin.py | ![screenshot](https://raw.githubusercontent.com/leec313/Fetch-and-Feast/main/readme-images/python-images/products-admin.png) | Pass: No Errors |
+| contexts.py | ![screenshot](https://raw.githubusercontent.com/leec313/Fetch-and-Feast/main/readme-images/python-images/products-contexts.png) | Pass: No Errors |
+| forms.py | ![forms 2](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/44429266-1111-4110-9b3e-42412b2cc533) | Pass: No Errors |
+| models.py | ![product_models](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/999ae46a-eaf3-4f49-ba5e-930b46845af7) | Pass: No Errors |
+| urls.py | ![products_urls](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/aea32199-4c6e-46ad-93c9-42adb06d1827) | Pass: No Errors |
+| views.py | ![views_products](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/b957aa96-8f34-414e-9396-86fee3aa651a) | Pass: No Errors |

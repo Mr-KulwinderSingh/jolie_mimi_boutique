@@ -570,7 +570,7 @@ By submitting the deployed site URL ([https://jolie-mimi-boutique-ad3e13f83c61.h
 
 # Testing
 
-For all testing, please refer to the [TESTING.md]() file.
+For all testing, please refer to the [TESTING.md](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/blob/main/TESTING.md) file.
 
 # Deployment
 
