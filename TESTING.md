@@ -79,7 +79,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | urls.py | ![profile_urls](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/e975aafc-feb0-46aa-8a7f-a73cf505a7c3) | Pass: No Errors |
 | views.py | ![profile_views](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/790c3330-d373-4f69-8307-1aeb8912368d) | Pass: No Errors |
 
-### Profile
+### Wishlist
 | File | Screenshot | Notes |
 | --- | --- | --- |
 | models.py | ![models_wishlist](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/ae0cd1a5-3d7b-4fc7-aca4-24e3bcb89290)| Pass: No Errors |
