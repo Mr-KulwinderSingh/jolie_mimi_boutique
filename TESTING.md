@@ -70,3 +70,38 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | models.py | ![product_models](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/999ae46a-eaf3-4f49-ba5e-930b46845af7) | Pass: No Errors |
 | urls.py | ![products_urls](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/aea32199-4c6e-46ad-93c9-42adb06d1827) | Pass: No Errors |
 | views.py | ![views_products](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/b957aa96-8f34-414e-9396-86fee3aa651a) | Pass: No Errors |
+
+### Profile
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| forms.py | ![forms_profile](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/9eba1736-69d1-4461-8b31-66f689471331) | Pass: No Errors |
+| models.py | ![profile_models](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/f29462f2-d576-4bb4-ac57-0fb473281e86) | Pass: No Errors |
+| urls.py | ![profile_urls](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/e975aafc-feb0-46aa-8a7f-a73cf505a7c3) | Pass: No Errors |
+| views.py | ![profile_views](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/790c3330-d373-4f69-8307-1aeb8912368d) | Pass: No Errors |
+
+### Profile
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| models.py | ![models_wishlist](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/ae0cd1a5-3d7b-4fc7-aca4-24e3bcb89290)| Pass: No Errors |
+| urls.py | ![urls_wishlist](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/0b086879-4e1b-47f2-a959-fd9fead09917)
+| Pass: No Errors |
+| views.py | ![views_wishlist](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/06e9ff83-01fa-47b3-802f-61f439af68cf) | Pass: No Errors |
+
+### Jolie Mimi Boutique
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| settings.py | ![settings](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/af3f188a-e360-4e13-b104-e1bc47939efd)| Pass: No Errors |
+| urls.py | ![urls_jolie](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/6e58fdb1-c3c0-4983-a74a-3bb9d17254bf)
+| Pass: No Errors |
+| views.py | ![views_jolie](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/603ed5c4-9fd2-40c2-abd1-a824c88a657f) | Pass: No Errors |
+
+## JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com/) to validate all of my JS files.
+
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| profiles app > countryfield.js | ![countryfield](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/4e6dac9d-7817-4988-a41e-6439cea8edf6) | Two unused variables (zoomIn & zoomOut) - they are being used by the profile image |
+| checkout app > stripe_elements.js | ![script_stripe_elements](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/d29d8314-828a-47aa-b99d-5769ef4c1ab8) |
+| product app > quantity_input.js | ![qty_input_script](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/1bde0b5c-169d-415c-8a4e-4b190e55a945) |  |
+

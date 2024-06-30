@@ -19,7 +19,6 @@ from cart.contexts import cart_contents
 import stripe
 import json
 
-
 @require_POST
 def cache_checkout_data(request):
     """
@@ -81,8 +80,7 @@ def  checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data
-                        ['items_by_size'].items():
+                        for size, quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -92,15 +90,14 @@ def  checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "1 product in your basket wasn't found in database."
+                        "One of the products in your basket wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse(
-                'checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -122,7 +119,7 @@ def  checkout(request):
     print(intent)
 
     if request.user.is_authenticated:
-        try:
+            try:
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
@@ -140,16 +137,18 @@ def  checkout(request):
     else:
         order_form = OrderForm()
 
+    
     if not stripe_public_key:
         messages.warning(request, "The Stripe public key seems to be missing, \
             Have you correctly set the public key in your enviroment?")
 
-    template = 'checkout/checkout.html'
+    template = 'checkout/checkout.html' 
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
+    
     return render(request, template, context)
 
 
@@ -194,3 +193,4 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
