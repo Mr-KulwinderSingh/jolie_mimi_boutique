@@ -104,7 +104,7 @@
 
 # UX
 
-The website was created to be eye-catching and user-friendly. The user is given plenty of choices to choose from when they are shopping. The emphasis is on the user experience; the user can navigate the website easily to fulfill users' goals. The website is designed to be easy to use and easy to understand. Additionally, the website attracts customers to become a part of loyalty programs by giving them additional discounts on their purchases.
+The website was created to be eye-catching and user-friendly. The user is given plenty of choices to choose from when they are shopping. The emphasis is on the user experience; the user can navigate the website easily to fulfill users' goals. The website is designed to be easy to use and easy to understand. Additionally, the website attracts customers to become a part of loyalty programs by giving them additional discounts on their subscriptions of this website.
 It also handles all personnel functionality moving from admin to manager to logistics to other personnel.
 Business goals were to make the website as scalable as possible and reusable in the real world so that the store personnel could use it according to their position in the company.
 
@@ -460,7 +460,7 @@ In summary, the use of project milestones, epics, user stories, and tasks, coupl
 4. **Customer Segments**:
     
     - Teenage customers: Individuals which are interested in purchasing quality fabric and latest trendy clothes from a reliable source.
-    - All ages(above teenage): All other customers who know where you get from basic to high cost and for all types of occasions clothes and jewellery.
+    - All ages(above teenage): All other customers who know where you get from basic to high quality and for all types of occasions clothes and jewellery.
     - Asian Females: We are not only dealing with western culture oriented clothes and jewellery even we serve our asian community as well by selling their cultural dresses and some unstitched variety clothes.  
 
 5. **Value Proposition**:

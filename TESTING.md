@@ -32,6 +32,16 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | [Jigsaw](https://jigsaw.w3.org/css-validator/) | ![base_css](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/41c6e690-e185-42bf-bc48-681bbf37f604) | Pass: No Errors |
 
 
+### Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Validation Image | Notes |
+| --- | --- | --- |
+| Home |![Screenshot 2024-06-30 at 04 10 57](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/71ae8520-a709-4470-96ea-54b447696648)
+| Some Minor Warnings |
+| 
+
 ## Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) to validate all of my Python files. Along the way I have made sure my code was clean by using the Pep8 and Flake8 addons within GitPod.
