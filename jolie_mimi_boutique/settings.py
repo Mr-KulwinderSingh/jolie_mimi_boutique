@@ -23,16 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', '^nl@zwdl)em=z=x$j-s7(h+@fp_y(6lbjid&t@#i$hjf4^7j3$')
 
 # DEBUG = 'DEVELOPMENT' in os.environ
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'jolie-mimi-boutique-ad3e13f83c61.herokuapp.com',
     'localhost',
-    '8000-mrkulwinder-joliemimibo-6iut6zxu5lz.ws-eu114.gitpod.io'
+    '*'
     ]
 
 
@@ -140,6 +140,11 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-mrkulwinder-joliemimibo-xwbg9mc3ynt.ws-eu118.gitpod.io",
+    "https://https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com/",
+]
 
 
 # Password validation
