@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', '^nl@zwdl)em=z=x$j-s7(h+@fp_y(6lbjid&t@#i$hjf4^7j3$')
 
-# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = 'DEVELOPMENT' in os.environ
 
 DEBUG = True
 
