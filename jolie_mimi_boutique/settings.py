@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '^nl@zwdl)em=z=x$j-s7(h+@fp_y(6lbjid&t
 
 DEBUG = 'DEVELOPMENT' in os.environ
 
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = [
     'jolie-mimi-boutique-ad3e13f83c61.herokuapp.com',
