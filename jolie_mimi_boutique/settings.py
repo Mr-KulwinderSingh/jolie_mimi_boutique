@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '^nl@zwdl)em=z=x$j-s7(h+@fp_y(6lbjid&t
 
 DEBUG = 'DEVELOPMENT' in os.environ
 
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'jolie-mimi-boutique-ad3e13f83c61.herokuapp.com',
@@ -142,6 +142,7 @@ else:
     }
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://8000-mrkulwinder-joliemimibo-xwbg9mc3ynt.ws-eu120.gitpod.io",
     "https://8000-mrkulwinder-joliemimibo-xwbg9mc3ynt.ws-eu118.gitpod.io",
     "https://https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com/",
 ]
@@ -185,6 +186,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
