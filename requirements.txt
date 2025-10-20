@@ -1,8 +1,8 @@
 asgiref==3.8.1
 certifi==2023.5.7
-cffi==2.0.0
+cffi==1.17.1
 charset-normalizer==3.3.2
-cryptography==46.0.3
+cryptography==42.0.0
 defusedxml==0.7.1
 distlib==0.3.8
 dj-database-url==3.0.1
@@ -15,7 +15,7 @@ filelock==3.16.0
 gunicorn==23.0.0
 idna==3.7
 load-dotenv==0.1.0
-numpy==1.24.3
+numpy==2.1.2
 oauthlib==3.2.2
 packaging==25.0
 pillow==10.4.0
