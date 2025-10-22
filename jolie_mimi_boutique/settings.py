@@ -9,8 +9,30 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import sendgrid
 import os
+from sendgrid.helpers.mail import Mail
+
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+
+# Default from email
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@joliemimi.ie')
+
+# Custom SendGrid email function
+def send_email(subject, message, recipient_list):
+    sg = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY)
+    for recipient in recipient_list:
+        email = Mail(
+            from_email=DEFAULT_FROM_EMAIL,
+            to_emails=recipient,
+            subject=subject,
+            plain_text_content=message,
+        )
+        sg.send(email)
+
+
+
+
 
 # Only load .env file in local development (not on Heroku)
 if 'DYNO' not in os.environ:  # Heroku automatically sets DYNO

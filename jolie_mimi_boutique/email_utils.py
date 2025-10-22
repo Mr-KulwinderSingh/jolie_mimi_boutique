@@ -1,18 +1,30 @@
-# email_utils.py
 import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
-SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@joliemimi.ie')
-
+# Function to send emails
 def send_email(subject, message, recipient_list):
-    sg = SendGridAPIClient(api_key=SENDGRID_API_KEY)
+    """
+    Sends an email using SendGrid.
+    
+    Args:
+        subject (str): Subject of the email
+        message (str): Body of the email
+        recipient_list (list): List of recipient emails
+    """
+    # Replace with your verified sender email
+    from_email = "k29singh@gmail.com"  # Verified sender in SendGrid
+    
     for recipient in recipient_list:
         email = Mail(
-            from_email=DEFAULT_FROM_EMAIL,
+            from_email=from_email,
             to_emails=recipient,
             subject=subject,
-            plain_text_content=message,
+            html_content=message
         )
-        sg.send(email)
+        try:
+            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            response = sg.send(email)
+            print(f"Email sent to {recipient}, Status Code: {response.status_code}")
+        except Exception as e:
+            print(f"Error sending email to {recipient}: {e}")
