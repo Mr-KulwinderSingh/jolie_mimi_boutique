@@ -271,5 +271,7 @@ else:
         "SENDGRID_API_KEY": os.environ.get("SENDGRID_API_KEY"),
     }
 
-    DEFAULT_FROM_EMAIL = "noreply@yourdomain.com"  # Replace with your verified sender or domain
+    DEFAULT_FROM_EMAIL = "k29singh@gmail.com"
     SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+
