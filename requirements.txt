@@ -1,8 +1,8 @@
 asgiref==3.8.1
 certifi==2023.5.7
-cffi==1.17.1
+cffi==2.0.0
 charset-normalizer==3.3.2
-cryptography==42.0.0
+cryptography==46.0.3
 defusedxml==0.7.1
 distlib==0.3.8
 dj-database-url==3.0.1
@@ -16,6 +16,7 @@ filelock==3.16.0
 gunicorn==23.0.0
 idna==3.7
 load-dotenv==0.1.0
+MarkupSafe==3.0.3
 numpy==2.1.2
 oauthlib==3.2.2
 packaging==25.0
@@ -25,12 +26,15 @@ psycopg2-binary==2.9.11
 pycparser==2.23
 PyJWT==2.10.1
 python-dotenv==1.1.1
+python-http-client==3.3.7
 python3-openid==3.2.0
 pytz==2024.1
 requests==2.32.3
 requests-oauthlib==2.0.0
+sendgrid==6.12.5
 sqlparse==0.5.0
 stripe==10.1.0
 typing_extensions==4.12.2
 urllib3==2.2.2
 virtualenv==20.26.4
+Werkzeug==3.1.3
