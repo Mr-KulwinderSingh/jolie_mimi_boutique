@@ -1,7 +1,7 @@
 import os
 
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'k29singh@gmail.com')  # verified sender
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'joliemimiboutique.com')  # verified sender
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 if 'DEVELOPMENT' in os.environ:
@@ -249,7 +249,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 if 'DEVELOPMENT' in os.environ:
     # Local development: print emails to console
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'joliemimiboutique@example.com'
+    DEFAULT_FROM_EMAIL = 'Jolie-Mimi Boutique <joliemimiboutique@gmail.com>'
 
 else:
     # Production (Heroku) - SendGrid setup
@@ -258,7 +258,7 @@ else:
         "SENDGRID_API_KEY": os.environ.get("SENDGRID_API_KEY"),
     }
 
-    DEFAULT_FROM_EMAIL = "k29singh@gmail.com"
-    SERVER_EMAIL = DEFAULT_FROM_EMAIL
+    DEFAULT_FROM_EMAIL = "joliemimiboutique.com"
+    SERVER_EMAIL = 'Jolie-Mimi Boutique <joliemimiboutique@gmail.com>'
 
 
