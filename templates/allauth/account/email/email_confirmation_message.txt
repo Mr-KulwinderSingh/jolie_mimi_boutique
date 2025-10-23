@@ -6,7 +6,7 @@
 {% blocktrans with site_name=current_site.name %}
 Hi {{ user_display }},
 
-Welcome to {{ Jolie-Mimi Boutique }}! 🎉
+Welcome to Jolie-Mimi Boutique 
 Please confirm your email address by clicking the link below:
 
 {{ activate_url }}
@@ -14,7 +14,7 @@ Please confirm your email address by clicking the link below:
 Once confirmed, you’ll be able to log in and start exploring.
 
 Thanks for joining us,  
-– The {{ Jolie-Mimi Boutique }} Team
+Jolie-Mimi Boutique Team
 {% endblocktrans %}
 
 {% endautoescape %}
