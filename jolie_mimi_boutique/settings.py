@@ -1,7 +1,7 @@
 import os
 
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'joliemimiboutique.com')  # verified sender
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'joliemimiboutique@gmail.com')  # verified sender
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 if 'DEVELOPMENT' in os.environ:
@@ -258,7 +258,7 @@ else:
         "SENDGRID_API_KEY": os.environ.get("SENDGRID_API_KEY"),
     }
 
-    DEFAULT_FROM_EMAIL = "joliemimiboutique.com"
+    DEFAULT_FROM_EMAIL = "joliemimiboutique@gmail.com"
     SERVER_EMAIL = 'Jolie-Mimi Boutique <joliemimiboutique@gmail.com>'
 
 
