@@ -206,7 +206,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # AWS configuration
-if 'USE_AWS' in os.environ:
+import os
+
+USE_AWS = os.environ.get('USE_AWS') == 'True'  # explicitly check string
+
+if USE_AWS:
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
