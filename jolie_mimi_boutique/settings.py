@@ -227,7 +227,6 @@ if USE_AWS:
     # Static and media files
     STATICFILES_LOCATION = 'static'
     MEDIAFILES_LOCATION = 'media'
-    
 
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
@@ -235,6 +234,7 @@ if USE_AWS:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
 
 
 # Default primary key field type
