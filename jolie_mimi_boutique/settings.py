@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'wishlist',
+    'jolie_mimi_boutique',
 
     #Other
     'crispy_forms',
