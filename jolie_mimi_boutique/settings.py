@@ -1,41 +1,16 @@
 import os
-
-SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'joliemimiboutique@gmail.com')  # verified sender
-SERVER_EMAIL = DEFAULT_FROM_EMAIL
-
-if 'DEVELOPMENT' in os.environ:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-else:
-    EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
-    ANYMAIL = {
-        "SENDGRID_API_KEY": SENDGRID_API_KEY,
-    }
-
+from pathlib import Path
+import dj_database_url
 
 # Only load .env file in local development (not on Heroku)
 if 'DYNO' not in os.environ:  # Heroku automatically sets DYNO
     from dotenv import load_dotenv
     load_dotenv()
 
-
-from pathlib import Path
-import os
-import dj_database_url
-
-
-ACCOUNT_ADAPTER = 'jolie_mimi_boutique.adapters.NoPrefixAccountAdapter'
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-
 SECRET_KEY = os.environ.get('SECRET_KEY', '&r-x2$m&wr&av4@wvhxah6(#6ar$nob)c*6f0j!2t!xy7ej2^8')
 
 DEBUG = 'DEVELOPMENT' in os.environ
@@ -44,12 +19,9 @@ ALLOWED_HOSTS = [
     '8000-mrkulwinder-joliemimibo-9n7kj185axd.ws-eu121.gitpod.io',
     'jolie-mimi-boutique-ad3e13f83c61.herokuapp.com',
     'localhost',
-    '*'
-    ]
-
+]
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -69,7 +41,7 @@ INSTALLED_APPS = [
     'wishlist',
     'jolie_mimi_boutique',
 
-    #Other
+    # Other
     'crispy_forms',
     'storages',
     'anymail',
@@ -95,7 +67,6 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth'),
-        
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -118,13 +89,8 @@ TEMPLATES = [
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
-   
-    # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
-    
 ]
 
 SITE_ID = 1
@@ -139,11 +105,7 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'jolie_mimi_boutique.wsgi.application'
 
-
-
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -158,13 +120,10 @@ else:
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-mrkulwinder-joliemimibo-9n7kj185axd.ws-eu121.gitpod.io',
-    "https://https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com/",
+    'https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com',
 ]
 
-
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -180,64 +139,46 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-import os
-
-if os.environ.get('DYNO'):  # this env var exists on Heroku
-    # S3 Storage
+# AWS S3 Configuration
+if 'USE_AWS' in os.environ:  # Better to use a specific flag
+    # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
 
+    # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'jolie-mimi-boutique-bucket'
     AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.eu-west-1.amazonaws.com'
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
 
-    STATICFILES_LOCATION = 'static'
-    MEDIAFILES_LOCATION = 'media'
-
+    # Static and media files
     STATICFILES_STORAGE = 'jolie_mimi_boutique.custom_storages.StaticStorage'
     DEFAULT_FILE_STORAGE = 'jolie_mimi_boutique.custom_storages.MediaStorage'
 
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
-
-
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # Stripe
 FREE_DELIVERY_THRESHOLD = 50
@@ -248,20 +189,18 @@ STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 # Email settings
-
 if 'DEVELOPMENT' in os.environ:
     # Local development: print emails to console
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'Jolie-Mimi Boutique <joliemimiboutique@gmail.com>'
-
+    DEFAULT_FROM_EMAIL = 'joliemimiboutique@gmail.com'
 else:
     # Production (Heroku) - SendGrid setup
     EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
     ANYMAIL = {
         "SENDGRID_API_KEY": os.environ.get("SENDGRID_API_KEY"),
     }
-
     DEFAULT_FROM_EMAIL = "joliemimiboutique@gmail.com"
-    SERVER_EMAIL = 'Jolie-Mimi Boutique <joliemimiboutique@gmail.com>'
+    SERVER_EMAIL = "joliemimiboutique@gmail.com"
 
+ACCOUNT_ADAPTER = 'jolie_mimi_boutique.adapters.NoPrefixAccountAdapter'
 
