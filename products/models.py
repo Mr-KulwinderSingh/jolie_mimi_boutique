@@ -38,6 +38,21 @@ class Product(models.Model):
         max_digits=6, decimal_places=2, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+    def save(self, *args, **kwargs):
+        print(f"=== PRODUCT SAVE DEBUG ===")
+        print(f"Product: {self.name}")
+        print(f"Image before save: {self.image}")
+        if self.image:
+            print(f"Image name before save: {self.image.name}")
+        
+        # Call the original save method
+        super().save(*args, **kwargs)
+        
+        print(f"Image after save: {self.image}")
+        if self.image:
+            print(f"Image name after save: {self.image.name}")
+            print(f"Image URL: {self.image.url}")
+
     def average_rating(self):
         return Rating.objects.filter(
             product=self).aggregate(Avg('score'))['score__avg']

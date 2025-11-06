@@ -33,3 +33,23 @@ class ProductForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded'
 
+    def save(self, commit=True):
+        print("=== PRODUCT FORM SAVE DEBUG ===")
+        print(f"Form has files: {bool(self.files)}")
+        if 'image' in self.files:
+            print(f"Image file in form: {self.files['image']}")
+            print(f"Image name: {self.files['image'].name}")
+            print(f"Image size: {self.files['image'].size}")
+        
+        instance = super().save(commit=False)
+        print(f"Instance before save: {instance}")
+        print(f"Instance image before save: {instance.image}")
+        
+        if commit:
+            instance.save()
+            self.save_m2m()
+            print(f"Instance after save: {instance}")
+            print(f"Instance image after save: {instance.image}")
+        
+        return instance
+

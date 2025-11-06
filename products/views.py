@@ -139,6 +139,30 @@ def edit_review(request, review_id):
 
 
 @login_required
+# def add_product(request):
+#     """ Add a product to the store """
+#     if not request.user.is_superuser:
+#         messages.error(request, 'Sorry only store owner can do that.')
+#         return redirect(reverse('home'))
+
+#     if request.method == 'POST':
+#         form = ProductForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             product = form.save()
+#             messages.success(request, 'Successfully added product!')
+#             return redirect(reverse('product_detail', args=[product.id]))
+#         else:
+#             messages.error(
+#                 request, 'Failed to add product. Check if the form is valid.')
+#     else:
+#         form = ProductForm() 
+#     template = 'products/add_product.html'
+#     context = {
+#         'form': form,
+#     }
+
+#     return render(request, template, context)
+@login_required
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
@@ -147,15 +171,50 @@ def add_product(request):
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
+        print(f"=== DEBUG: Product Upload ===")
+        print(f"Form valid: {form.is_valid()}")
+        print(f"Files in request: {dict(request.FILES)}")
+        
         if form.is_valid():
-            product = form.save()
+            # Debug before saving
+            product = form.save(commit=False)
+            print(f"Product object created: {product}")
+            
+            if product.image:
+                print(f"Image field before save: {product.image}")
+                print(f"Image name: {product.image.name}")
+                print(f"Image size: {getattr(product.image, 'size', 'No size')}")
+            
+            # Save the product (this should trigger the file upload to S3)
+            product.save()
+            print(f"✅ Product saved with ID: {product.id}")
+            print(f"Image field after save: {product.image}")
+            print(f"Image URL: {product.image.url}")
+            
+            # Test if file actually exists in S3
+            try:
+                exists = product.image.storage.exists(product.image.name)
+                print(f"📁 Image exists in storage: {exists}")
+                
+                if exists:
+                    print("🎉 SUCCESS: File uploaded to S3!")
+                else:
+                    print("❌ FAILED: File does not exist in S3!")
+                    print(f"Storage backend: {product.image.storage}")
+                    print(f"Expected S3 path: {product.image.name}")
+                    
+            except Exception as e:
+                print(f"⚠️ Error checking file existence: {e}")
+            
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
+            print(f"❌ Form errors: {form.errors}")
             messages.error(
                 request, 'Failed to add product. Check if the form is valid.')
     else:
-        form = ProductForm() 
+        form = ProductForm()
+    
     template = 'products/add_product.html'
     context = {
         'form': form,
