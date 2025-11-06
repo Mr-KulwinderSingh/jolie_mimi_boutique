@@ -155,8 +155,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # AWS S3 Configuration
-if 'USE_AWS' in os.environ:  # Better to use a specific flag
-    # Cache control
+if os.environ.get('USE_AWS') == 'True':
+    print("✓ Using AWS S3 storage")  # This will show in logs
+    # S3 Configuration
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
