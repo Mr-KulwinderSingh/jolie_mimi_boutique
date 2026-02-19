@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from . import views
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
@@ -33,6 +34,10 @@ urlpatterns = [
     path('faq/', views.faq_view, name='faq'),
     path('contact/', views.contact_view, name='contact'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 # Handlers for custom error pages
 handler404 = views.custom_404
