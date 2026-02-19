@@ -42,12 +42,3 @@ handler404 = views.custom_404
 handler403 = views.custom_403
 handler400 = views.custom_400
 handler500 = views.custom_500
-
-
-from django.views.generic import RedirectView
-from django.templatetags.static import static
-from django.urls import path
-
-urlpatterns += [
-    path('favicon.ico', RedirectView.as_view(url=static('favicon.ico'))),
-]
