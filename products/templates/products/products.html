@@ -172,9 +172,10 @@
 
             var selectedVal = selector.val();
             if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
-
+                var parts = selectedVal.split("_");
+                var direction = parts.pop();  // removes last item (asc/desc)
+                var sort = parts.join("_");   // joins remaining back together
+                
                 currentUrl.searchParams.set("sort", sort);
                 currentUrl.searchParams.set("direction", direction);
 
