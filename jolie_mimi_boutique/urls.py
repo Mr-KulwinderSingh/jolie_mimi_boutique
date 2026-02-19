@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('profile/', include('profiles.urls'))
 """
-
+from django.views.generic import RedirectView
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -33,10 +33,8 @@ urlpatterns = [
     path('wishlist/', include('wishlist.urls')),
     path('faq/', views.faq_view, name='faq'),
     path('contact/', views.contact_view, name='contact'),
+    path('favicon.ico', RedirectView.as_view(url=static('favicon.ico'))),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 # Handlers for custom error pages
@@ -44,3 +42,12 @@ handler404 = views.custom_404
 handler403 = views.custom_403
 handler400 = views.custom_400
 handler500 = views.custom_500
+
+
+from django.views.generic import RedirectView
+from django.templatetags.static import static
+from django.urls import path
+
+urlpatterns += [
+    path('favicon.ico', RedirectView.as_view(url=static('favicon.ico'))),
+]
