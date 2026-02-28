@@ -13,7 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '&r-x2$m&wr&av4@wvhxah6(#6ar$nob)c*6f0j!2t!xy7ej2^8')
 
-# DEBUG = 'DEVELOPMENT' in os.environ
+
+DEBUG = 'DEVELOPMENT' in os.environ
+
 
 ALLOWED_HOSTS = [
     '8000-mrkulwinder-joliemimibo-9n7kj185axd.ws-eu121.gitpod.io',
