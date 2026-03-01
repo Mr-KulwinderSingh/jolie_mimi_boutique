@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     # Other
     'crispy_forms',
     'storages',
-    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -203,7 +202,7 @@ if 'DEVELOPMENT' in os.environ:
     DEFAULT_FROM_EMAIL = 'joliemimiboutique@gmail.com'
 else:
     # Production (Heroku) - SendGrid setup
-    EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_HOST = "smtp.sendgrid.net"
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
