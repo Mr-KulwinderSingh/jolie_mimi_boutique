@@ -85,6 +85,9 @@
                             <div class="card-body pb-0">
                                  <!--product name display -->
                                 <p class="mb-0">{{ product.name }}</p>
+                                {% if product.stock == 0 %}
+                                <span class="badge badge-danger">Sold Out</span>
+                                {% endif %}
                             </div>
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">

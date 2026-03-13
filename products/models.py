@@ -37,6 +37,7 @@ class Product(models.Model):
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    stock = models.PositiveBigIntegerField(default=0)
 
     def save(self, *args, **kwargs):
         print(f"=== PRODUCT SAVE DEBUG ===")

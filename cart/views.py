@@ -10,39 +10,125 @@ def view_cart(request):
 
     return render(request, 'cart/cart.html')
 
-def add_to_cart(request, item_id):
-    """ Add a quantity of the product chosen by the customer to the shopping cart"""
+# def add_to_cart(request, item_id):
+#     """ Add a quantity of the product chosen by the customer to the shopping cart"""
     
+#     product = get_object_or_404(Product, pk=item_id)
+#     quantity = int(request.POST.get('quantity'))
+#     redirect_url = request.POST.get('redirect_url')
+
+#     cart = request.session.get('cart', {})
+#     item_id = str(item_id)
+
+#     #STOCK VALIDATION
+#     if quantity > product.stock:
+#         messages.error(request, f'Sorry, only {product.stock} items available')
+#         return redirect(redirect_url)
+    
+#     size = None
+#     if 'product_size' in request.POST:
+#         size = request.POST['product_size']
+
+#     if size:
+#         if item_id in list(cart.keys()):
+#             if size in cart[item_id]['items_by_size'].keys():
+#                 cart[item_id]['items_by_size'][size] += quantity
+#                 messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {cart[item_id]["items_by_size"][size]}')
+#             else:
+#                 cart[item_id]['items_by_size'][size] = quantity
+#                 messages.success(request, f'Added size {size.upper()} {product.name} to your cart')
+#         else:
+#             cart[item_id] = {'items_by_size': {size : quantity}}
+#             messages.success(request, f'Added size {size.upper()} {product.name} to your cart')
+#     else:
+#         if item_id in cart:
+#             current_quantity = cart[item_id]
+#             new_quantity = current_quantity + quantity
+
+#             if new_quantity > product.stock:
+#                 messages.error(
+#                     request,
+#                     f"Sorry, you already have {current_quantity} in your cart. Only {product.stock} available."
+#                 )
+#                 return redirect(redirect_url)
+
+#             cart[item_id] = new_quantity
+#             messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
+#         else:
+#             if quantity > product.stock:
+#                 messages.error(request, f"Sorry, only {product.stock} of {product.name} available. ")
+#                 return redirect(redirect_url)
+#             cart[item_id] = quantity
+#             messages.success(request, f'Added {product.name} to your cart')
+
+#     request.session['cart'] = cart
+#     return redirect(redirect_url)
+
+def add_to_cart(request, item_id):
+    """Add a quantity of the product chosen by the customer to the shopping cart."""
+
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+
     cart = request.session.get('cart', {})
+    item_id = str(item_id)  # always use string keys
+
+    size = request.POST.get('product_size', None)
 
     if size:
-        if item_id in list(cart.keys()):
-            if size in cart[item_id]['items_by_size'].keys():
-                cart[item_id]['items_by_size'][size] += quantity
-                messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {cart[item_id]["items_by_size"][size]}')
-            else:
-                cart[item_id]['items_by_size'][size] = quantity
-                messages.success(request, f'Added size {size.upper()} {product.name} to your cart')
+        # Initialize size structure if needed
+        if item_id not in cart:
+            cart[item_id] = {'items_by_size': {}}
+
+        current_quantity = cart[item_id]['items_by_size'].get(size, 0)
+        new_quantity = current_quantity + quantity
+
+        if new_quantity > product.stock:
+            messages.error(
+                request,
+                f"Sorry, you already have {current_quantity} of size {size.upper()} in your cart. Only {product.stock} available."
+            )
+            return redirect(redirect_url)
+
+        cart[item_id]['items_by_size'][size] = new_quantity
+        if current_quantity > 0:
+            messages.success(
+                request,
+                f"Updated size {size.upper()} {product.name} quantity to {new_quantity}"
+            )
         else:
-            cart[item_id] = {'items_by_size': {size : quantity}}
-            messages.success(request, f'Added size {size.upper()} {product.name} to your cart')
+            messages.success(
+                request,
+                f"Added size {size.upper()} {product.name} to your cart"
+            )
+
     else:
-        if item_id in list(cart.keys()):
-            cart[item_id] += quantity
-            messages.success(request, f'Updated {product.name}  quantity to {cart[item_id]}')
+        # Non-size products
+        current_quantity = cart.get(item_id, 0)
+        new_quantity = current_quantity + quantity
+
+        if new_quantity > product.stock:
+            messages.error(
+                request,
+                f"Sorry, you already have {current_quantity} in your cart. Only {product.stock} available."
+            )
+            return redirect(redirect_url)
+
+        cart[item_id] = new_quantity
+        if current_quantity > 0:
+            messages.success(
+                request,
+                f"Updated {product.name} quantity to {new_quantity}"
+            )
         else:
-            cart[item_id] = quantity
-            messages.success(request, f'Added {product.name} to your cart')
+            messages.success(
+                request,
+                f"Added {product.name} to your cart"
+            )
 
     request.session['cart'] = cart
     return redirect(redirect_url)
-
 
 def update_cart(request, item_id):
     """ updates quantity of the product chosen by the customer to the shopping cart"""
@@ -53,6 +139,11 @@ def update_cart(request, item_id):
     if 'product_size' in request.POST:
         size = request.POST['product_size']
     cart = request.session.get('cart', {})
+
+    # STOCK VALIDATION
+    if quantity > product.stock:
+        messages.error(request, f"Sorry, only {product.stock} of {product.name} available.")
+        return redirect(reverse('view_cart'))
 
     if size:
         if quantity > 0:

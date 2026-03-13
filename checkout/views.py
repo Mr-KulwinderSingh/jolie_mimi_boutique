@@ -79,6 +79,10 @@ def  checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
+
+                        if product.stock >= item_data:
+                            product.stock -= item_data
+                            product.save()
                     else:
                         for size, quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
@@ -88,6 +92,10 @@ def  checkout(request):
                                 product_size=size,
                             )
                             order_line_item.save()
+                            if product.stock >= quantity:
+                                product.stock -= quantity
+                                product.save()
+
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your basket wasn't found in our database. "
