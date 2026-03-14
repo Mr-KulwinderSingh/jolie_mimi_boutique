@@ -47,9 +47,9 @@
                     {% endif %}
                      <!--if product has rating, display average-->
                     {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating}} / 5</small>
+                        <small class="text-danger"><i class="fas fa-star mr-1"></i>{{ product.rating}} / 5</small>
                     {% else %}
-                    <span class="text-decoration-none text-dark average-stars">
+                    <span class="text-danger average-stars">
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
