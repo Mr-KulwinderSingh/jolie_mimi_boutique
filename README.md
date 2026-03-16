@@ -305,13 +305,21 @@ The following improvements were recently implemented to enhance the application:
 - Updated product category naming structure
 - Improved deployment configuration
 
-<div align="center">
- <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/3d3a0259-23cf-41f7-8053-dfc49b01c3cf" alt="hero-image-and-nav">
-</div>
+##
+
+![Homepage](readme-images/homepage.png)
+
+##
+
 <div align="center">
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/b0c6d87b-b9d6-454c-a77d-ca430e8b542b" alt="hero-image-and-nav-mobile">
+
+ ##
+
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/1c735239-0d1c-4e01-9b0b-05c21438109a" alt="hero-image-and-nav-mobile">
 </div>
+
+##
 
 - ### Footer
     
@@ -330,15 +338,21 @@ The following improvements were recently implemented to enhance the application:
         - Features a link to the site's Facebook page, facilitating social media engagement and community interaction.
         - Includes copyright information and a link to the privacy policy, ensuring compliance with legal requirements and providing transparency to users regarding data usage and privacy practices.
 
+##
+
 <div align="center">
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/64c9ad05-c6a6-45dc-8d32-c118684d9b1b" alt="footer">
 </div>
+
+##
 
 - Mobile
 
 <div align="center">
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/5e2fb208-25fb-4733-8cc5-b8a946a4462c" alt="footer-mobile">
 </div>
+
+##
 
 
 - ### Product List
@@ -350,13 +364,20 @@ The following improvements were recently implemented to enhance the application:
         - To enhance usability and manageability, the product list displays a maximum of 4 products in a row and scroll-down button can show all of them.
         - If user wants to go back and have a look at particular one which was at the top row of the page, He can use the 'Back to Top' button, which is located at the bottom right corner of the page.
 
+##
+
 <div align="center">
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/d963d3ae-47cd-4bfe-b6dd-0db609038ee8
 " alt="products">
 </div>
+
+##
+
 <div align="center">
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/4709e570-cff5-4272-b516-778f44bae65f" alt="products-mobile">
 </div>
+
+##
 
 - ### Product Detail
     - The product detail section on the product page provides users with comprehensive information about the selected product.
@@ -374,9 +395,13 @@ The following improvements were recently implemented to enhance the application:
         - The product image is prominently displayed within the product detail section.
         - A simple Bootstrap popup modal is implemented to allow users to view a larger version of the product image if desired, enhancing the user experience by providing a closer look at the product.
 
+##
+
 <div align="center">
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/ebd363f3-9e4a-46c8-8a4b-4851f9745ea8" alt="products">
 </div>
+
+##
 
 - ### Reviews
 
@@ -386,11 +411,14 @@ The following improvements were recently implemented to enhance the application:
     - A check is performed to determine if the current user has an account, allowing only verified account holders to submit reviews.
     - Profile names of users who submitted reviews are displayed alongside the date and stars, enhancing the credibility of the ratings and reviews.
     - Superusers can edit or delete individual reviews/ratings through dedicated updated reviews.
-.
+
+##
 
 <div align="center">
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/87704023-b1a2-44d8-8009-052eb354d621" alt="reviews">
 </div>
+
+##
 
 ## Architecture
 
@@ -467,20 +495,27 @@ Deployment:
     + [Privacy Policy Generator](https://www.privacypolicygenerator.info/) was used to create the privacy policy.
     + [Django-extensions](https://django-extensions.readthedocs.io/en/latest/) was used to create a Entity-Relationship Diagram.
 
+##
+
 # Webhooks
     
 - The site uses a secure and robust webhook system to ensure that the payment process cannot be interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in `checkout > webhook_handler.py` and `checkout > webhooks.py`
+
+##
 
 <div align="center">
  <img src="" alt="stripe-webhooks">
 </div>
 
+##
 
 # Database Design
 
 <div align="center">
  <img src="" alt="database">
 </div>
+
+##
 
 ### Product Model
 
@@ -547,6 +582,8 @@ The stock field tracks available inventory and prevents customers from purchasin
     - This model represents a category for products.
     - It's referenced by the Product model through a foreign key, indicating that each product belongs to a specific category.
 
+##
+
 
 # Ecommerce Business Model
 
@@ -612,12 +649,10 @@ The stock field tracks available inventory and prevents customers from purchasin
     - Geographic Expansion: Scaling operations to reach new geographic markets and expand the customer base.
     - Customer Loyalty Programs: Implementing loyalty programs, discounts, and rewards to incentivize repeat purchases and customer loyalty.
 
-
-
-<hr>
-
+##
 
 # Search Engine Optimization And Social Media Marketing
+
 
 Newsletters / Subscrition were implemented in the email_notification. The manager can create a newsletter and send it to all customers. Offers and discounts all can be advertised and introduced via newsletters. It also handles sending newsletters about new loyalty programs with promo codes(Futue development).
 
@@ -632,14 +667,14 @@ I have used Django EmailMultiAlternatives to send the newsletter.
 
 To send a newsletter about new loyalty programs, offers, and discounts to all customers, the manager/admin can create a newsletter using the same form with a promo code field filled with a legend. Django EmailMultiAlternatives is also responsible for it.
 
-<hr>
-
+##
 
 3. Facebook
 
 Facebook is essential for the store to be able to reach customers. According to the statistics, the store has a good reach among people who prefer to use Facebook. Facebook has excellent coverage worldwide among people who can purchase products online.
 
 "Jolie Mimi Boutique" Facebook page is for marketing purposes to post adverts and exciting content and engage users.
+
 
 ![Jolie Mimi Boutique](readme-images/facebook-page.jpeg)
 
@@ -651,7 +686,7 @@ Please follow the links to see more images:
 
 [facebook-page-3](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/1c23a8f0-86af-4dbd-b96a-f2a0983d0068)
 
-<hr>
+##
 
 4. Instagram
 
@@ -659,9 +694,11 @@ Instagram attracts people of younger ages and is essential for the store to be a
 
 "Jolie Mimi Boutique" Instagram page is for marketing purposes to post adverts, interesting content, and engage users.
 
+##
+
 ![Jolie Mimi Boutique](readme-images/instagram.jpeg)
 
-<hr>
+##
 
 ### Sitemap Generation with XML-Sitemaps
 
