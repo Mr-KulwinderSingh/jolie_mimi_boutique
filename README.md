@@ -13,14 +13,40 @@
 
 ---
 
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Django](https://img.shields.io/badge/Django-5.2-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-blue)
+![Stripe](https://img.shields.io/badge/Payments-Stripe-purple)
+![Deployment](https://img.shields.io/badge/Deployment-Heroku-orange)
+
 # E-commerce website
 
 **Deployed website: [Link to website](https://jolie-mimi-boutique-ad3e13f83c61.herokuapp.com/)**
 
 
-![Main image](readme-images/main-page.jpeg)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
 
 **Card number for payment testing: 4242424242424242**
+
+## Screenshots
+
+### Homepage
+![Homepage](readme-images/homepage.png)
+
+### Product Detail Page
+![Product](readme-images/product-detail.png)
+![Product](readme-images/product-detail-below-5.png)   
+![Product](readme-images/product-detail-sold-out.png)
+
+### Shopping Cart
+![Cart](readme-images/shopping-cart.png)
+
+### Checkout
+![Checkout](readme-images/checkout-1.png)
+![Checkout](readme-images/checkout-2.png)
+
+### Purchase Completed
+![Order-Processed](readme-images/order-completed.jpeg)
  
 
 ## Table of Contents
