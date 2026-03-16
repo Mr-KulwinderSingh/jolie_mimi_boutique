@@ -79,6 +79,15 @@
 
     <li>
     <a href="#features-not-yet-implemented">Features Not Yet Implemented</a>
+
+    ## Future Improvements
+
+- Low stock alerts for admin users
+- Product recommendation system
+- Customer wishlist
+- Order history dashboard
+
+
     </li>
     </ul>
 </details>
@@ -246,6 +255,30 @@ In summary, the use of project milestones, epics, user stories, and tasks, coupl
     - The main homepage showcases a large, visually striking hero image that instantly grabs the user's attention. High-quality hero image shows a girl sitting on an elevator, appealing to female customers with trendy fashion clothes and jewelry. 
     - A prominent call-to-action button invites users to enter and explore the site's products.
 
+## Stock Management System
+
+The application includes a stock management system to prevent overselling.
+
+Features include:
+
+- Stock validation when adding items to cart
+- Stock validation when updating cart quantities
+- Automatic stock reduction after successful purchase
+- Add to cart button disabled when stock reaches zero
+
+## Recent Improvements
+
+The following improvements were recently implemented to enhance the application:
+
+- Migrated the production database from ElephantSQL to Neon PostgreSQL
+- Implemented inventory stock management
+- Added stock validation before adding items to cart
+- Prevented customers from adding more items than available stock
+- Automatically decrease stock after successful purchase
+- Hide "Add to Cart" button when product stock reaches zero
+- Updated product category naming structure
+- Improved deployment configuration
+
 <div align="center">
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/3d3a0259-23cf-41f7-8053-dfc49b01c3cf" alt="hero-image-and-nav">
 </div>
@@ -333,6 +366,31 @@ In summary, the use of project milestones, epics, user stories, and tasks, coupl
  <img src="https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique/assets/124357266/87704023-b1a2-44d8-8009-052eb354d621" alt="reviews">
 </div>
 
+## Architecture
+
+The application uses a full-stack Django architecture.
+
+Frontend:
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+
+Backend:
+- Django
+
+Database:
+- PostgreSQL (Neon)
+
+Payments:
+- Stripe
+
+Media Storage:
+- AWS S3
+
+Deployment:
+- Heroku
+
 
 ## Technologies used
 - ### Languages:
@@ -397,6 +455,24 @@ In summary, the use of project milestones, epics, user stories, and tasks, coupl
 <div align="center">
  <img src="" alt="database">
 </div>
+
+### Product Model
+
+The product model includes inventory management:
+
+- sku
+- stock
+- name
+- description
+- selling price
+- discounted price(not yet implemented)
+- category
+- rating
+- has sizes
+- image
+
+
+The stock field tracks available inventory and prevents customers from purchasing more items than available.
 
 1. **User (allauth)**:
     
@@ -576,18 +652,15 @@ For all testing, please refer to the [TESTING.md](https://github.com/Mr-Kulwinde
 
 The live deployed application can be found deployed on [Heroku](https://github.com/Mr-KulwinderSingh/jolie_mimi_boutique).
 
-### ElephantSQL Database
+## Deployment
 
-This project uses [ElephantSQL](https://www.elephantsql.com/) for the PostgreSQL Database.
+The application is deployed using Heroku.
 
-To obtain your own Postgres Database, sign-up with your GitHub account, then follow these steps:
+Production services include:
 
-- Click **Create New Instance** to start a new database.
-- Provide a name (this is commonly the name of the project: fetch-and-feast).
-- Select the **Tiny Turtle (Free)** plan.
-- You can leave the **Tags** blank.
-- Select the **Region** and **Data Center** closest to you.
-- Once created, click on the new database name, where you can view the database URL and Password.
+- PostgreSQL database hosted on Neon
+- AWS S3 for static and media file storage
+- Stripe for secure payment processing
 
 ### Amazon AWS
 
