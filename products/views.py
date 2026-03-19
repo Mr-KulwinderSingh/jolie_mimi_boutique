@@ -68,9 +68,12 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     form = ReviewForm
 
+    quantity_range = range(1, min(product.stock, 10) + 1)
+
     context = {
         'product': product,
         'form': form,
+        'quantity_range': quantity_range,
     }
 
     return render(request, 'products/product_detail.html', context)

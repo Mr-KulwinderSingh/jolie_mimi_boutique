@@ -228,6 +228,24 @@ input[name='q']::placeholder {
 }
 
 
+/* quantity selector upgrade */
+
+.qty-select {
+    width: 70px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+@media (max-width: 576px) {
+    .qty-select {
+        width: 90px;
+        font-size: 16px;
+    }
+}
+
+
+
 
 /* -------------------------------- Media Queries */
 

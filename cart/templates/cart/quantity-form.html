@@ -3,26 +3,15 @@
     {% csrf_token %}
     <div class="form-group">
         <div class="input-group">
-            <div class="input-group-prepend">
-                <button class="decrement-qty btn btn-sm btn-secondary rounded" 
-                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                <span>
-                    <i class="fas fa-minus fa-sm"></i>
-                </span>
-            </button>
-            </div>
-            <input class="form-control form-control-sm qty_input" type="number" 
-            name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" 
-            data-item_id="{{ item.item_id }}" 
-            id="id_qty_{{ item.item_id }}">
-            <div class="input-group-append">
-                <button class="increment-qty btn btn-sm btn-secondary rounded"
-                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                <span>
-                    <i class="fas fa-plus fa-sm"></i>
-                </span>
-            </button>
-            </div>
+            
+        <select name="quantity" class="qty-select">
+            {% for i in item.quantity_range %}
+                <option value="{{ i }}"
+                    {% if i == item.quantity %}selected{% endif %}>
+                    {{ i }}
+                </option>
+            {% endfor %}
+        </select>
             <!--If product has sizes submit the value to the database-->
             {% if item.product.has_sizes %}
             <input type="hidden" name="product_size" value="{{ item.size }}">
@@ -30,5 +19,5 @@
         </div>
     </div>
 </form>
-<a class="update-link text-info"><small>Update</small></a>
-<a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+<a class="update-link text-info ml-2 update-remove"><i class="fa-regular fa-square-plus"></i></i></a> or
+<a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><i class="fa-solid fa-trash"></small></i></a>

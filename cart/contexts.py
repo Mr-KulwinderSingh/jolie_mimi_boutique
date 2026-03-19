@@ -36,6 +36,8 @@ def cart_contents(request):
         except Product.DoesNotExist:
             # Handle the case where the product does not exist
             pass
+    for item in cart_items:
+            item['quantity_range'] = range(1, item['product'].stock + 1)
 
     if total < Decimal(settings.FREE_DELIVERY_THRESHOLD):
         delivery = total * (Decimal(settings.STANDARD_DELIVERY_PERCENTAGE) / 100)
@@ -56,4 +58,5 @@ def cart_contents(request):
         'grand_total': grand_total,
     }
 
+    
     return context
