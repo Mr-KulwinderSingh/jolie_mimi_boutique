@@ -13,9 +13,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '&r-x2$m&wr&av4@wvhxah6(#6ar$nob)c*6f0j!2t!xy7ej2^8')
 
-
-
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
+# DEBUG = 'DEVELOPMENT' in os.environ
 
 
 ALLOWED_HOSTS = [
@@ -183,6 +182,7 @@ if os.environ.get('USE_AWS') == 'True':
     # Static and media files
     DEFAULT_FILE_STORAGE = 'jolie_mimi_boutique.custom_storages.MediaStorage'
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3ManifestStaticStorage"
+
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'

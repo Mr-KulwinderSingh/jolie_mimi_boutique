@@ -3,15 +3,14 @@
     {% csrf_token %}
     <div class="form-group">
         <div class="input-group">
-            
-        <select name="quantity" class="qty-select">
-            {% for i in item.quantity_range %}
-                <option value="{{ i }}"
-                    {% if i == item.quantity %}selected{% endif %}>
-                    {{ i }}
-                </option>
-            {% endfor %}
-        </select>
+            <select class="qty-select quantity-select" name="quantity">
+                        {% for i in item.quantity_range %}
+                            <option value="{{ i }}"
+                                {% if i == item.quantity %}selected{% endif %}>
+                                {{ i }}
+                            </option>
+                        {% endfor %}
+                </select>
             <!--If product has sizes submit the value to the database-->
             {% if item.product.has_sizes %}
             <input type="hidden" name="product_size" value="{{ item.size }}">
@@ -19,5 +18,6 @@
         </div>
     </div>
 </form>
-<a class="update-link text-info ml-2"><i class="fa-regular fa-square-plus"></i></i></a> or
-<a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><i class="fa-solid fa-trash"></small></i></a>
+<a class="remove-item text-danger ml-4" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
+    <i class="fa-solid fa-trash"></i>
+</a>
