@@ -130,6 +130,13 @@ input[name='q']::placeholder {
     border: #ffffff;
 }
 
+/* wishlist button */
+
+.btn-pink {
+    background-color: #e12656;
+    
+}
+
 
 .btn-black:hover,
 .btn-black:active,

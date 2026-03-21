@@ -2,7 +2,7 @@
 <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
     {% csrf_token %}
     <div class="form-group">
-        <div class="input-group align-items-center">
+        <div>
             <select class="w-25 qty-select quantity-select" name="quantity">
                         {% for i in item.quantity_range %}
                             <option value="{{ i }}"
@@ -18,6 +18,6 @@
         </div>
     </div>
 </form>
-<a class="remove-item text-danger ml-4" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
-    <i class="fa-solid fa-trash"></i>
+<a class="remove-item text-danger ml-2" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
+    Remove
 </a>
