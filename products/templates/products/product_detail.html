@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                             <!-- Buttons for appropriate actions bag, wishlist & back to shopping  -->
-                            <div class="col-12 btn-container text-center">
+                            <div class="col-12 btn-container">
                                 <input class="btn btn-success add-btn-height mt-3 mr-1 " type="submit" value="Add to Cart">
                                 
                                 {% else %}
@@ -143,8 +143,27 @@
 
         <!-- Review Form -->
         {% if request.user.is_authenticated %}
-            <div class="card shadow-sm mb-4">
+            <div class="card shadow-sm mb-4 review-card">
+                
                 <div class="card-body">
+                    <div class="d-flex align-items-center mb-2">
+
+                <!-- Avatar -->
+                <div class="avatar me-2">
+                    {{ review.user.username|first|upper }}
+                </div>
+
+                <!-- Name + Date -->
+                <div>
+                    <small class="text-muted d-block">
+                        {{ review.user }}
+                    </small>
+                    <small class="text-muted">
+                        {{ review.date_added|date:"d-m-Y"}}
+                    </small>
+                </div>
+
+                </div>
 
                     {% if edit %}
                         <form method="POST" action="{% url 'edit_review' review.id %}#reviews">
@@ -192,9 +211,15 @@
                         <small class="text-muted">
                             by {{ review.user }} on {{ review.date_added|date:"d-m-Y"}}
                         </small>
-                        <span class="text-warning ">
-                            {{ review.rating }} / ★★★★☆
-                        </span>
+                    <div class="text-warning">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= review.rating %}
+                                <i class="fas fa-star"></i>
+                            {% else %}
+                                <i class="far fa-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                     </div>
                     <!-- Title -->
                     <h6 class="mb-1">{{ review.title }}</h6>
