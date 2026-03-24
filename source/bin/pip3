@@ -1,4 +1,4 @@
-#!/Users/kulwindersingh/Documents/Jolie_mimi_boutique/jolie_mimi_boutique-main/source/bin/python3.12
+#!/Users/kulwindersingh/Documents/Jolie_mimi_boutique/jolie_mimi_boutique-main/source/bin/python3.14
 import sys
 from pip._internal.cli.main import main
 if __name__ == '__main__':
