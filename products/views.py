@@ -192,22 +192,28 @@ def add_product(request):
             product.save()
             print(f"✅ Product saved with ID: {product.id}")
             print(f"Image field after save: {product.image}")
-            print(f"Image URL: {product.image.url}")
+            if product.image and product.image.name:
+                print(f"Image URL: {product.image.url}")
+            else:
+                print("No image uploaded, using default.")
             
             # Test if file actually exists in S3
-            try:
-                exists = product.image.storage.exists(product.image.name)
-                print(f"📁 Image exists in storage: {exists}")
-                
-                if exists:
-                    print("🎉 SUCCESS: File uploaded to S3!")
-                else:
-                    print("❌ FAILED: File does not exist in S3!")
-                    print(f"Storage backend: {product.image.storage}")
-                    print(f"Expected S3 path: {product.image.name}")
-                    
-            except Exception as e:
-                print(f"⚠️ Error checking file existence: {e}")
+            if product.image and product.image.name:
+                try:
+                    exists = product.image.storage.exists(product.image.name)
+                    print(f"📁 Image exists in storage: {exists}")
+
+                    if exists:
+                        print("🎉 SUCCESS: File uploaded to S3!")
+                    else:
+                        print("❌ FAILED: File does not exist in S3!")
+                        print(f"Storage backend: {product.image.storage}")
+                        print(f"Expected S3 path: {product.image.name}")
+
+                except Exception as e:
+                    print(f"⚠️ Error checking file existence: {e}")
+            else:
+                print("📁 No image to check in storage.")
             
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
