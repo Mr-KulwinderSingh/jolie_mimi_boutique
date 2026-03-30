@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -103,14 +104,13 @@
                                         {% endif %}
                                         <!--if product has rating, display stars hilighting rating -->
                                         {% for i in "12345" %}
-                                            {% if product.rating and forloop.counter <= product.rating %}
-                                                <i class="text-warning fas fa-star"></i>
+                                            {% if forloop.counter <= product.full_stars %}
+                                                 <i class="fas fa-star text-warning"></i>
                                             {% else %}
-                                            <!--else display 5 empty stars-->
-                                                <i class="text-warning far fa-star"></i>
+                                                 <i class="fas fa-star text-warning"></i>
                                             {% endif %}
                                         {% endfor %}
-                                                            <!--if superuser display edit/delete links-->
+                                        <!--if superuser display edit/delete links-->
                                         {% if request.user.is_superuser %}
                                         <small class="ml-3">
                                             <a href="{% url 'edit_product' product.id %}">Update</a> or

@@ -23,7 +23,7 @@
                          <!--otherwise display default image-->
                         {% else %}
                         <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}jolie-mimi-default-image.png" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid rounded" src="{{ MEDIA_URL }}jolie-mimi-default-image.png" alt="{{ product.name }}">
                         </a>
                     {% endif %}
                 </div>
@@ -46,14 +46,19 @@
                     </p>
                     {% endif %}
                      <!--if product has rating, display stars hilighting rating -->
-                    {% for i in "12345" %}
-                        {% if product.rating and forloop.counter <= product.rating %}
-                            <i class="text-warning fas fa-star"></i>
-                        {% else %}
-                        <!--else display 5 empty stars-->
-                            <i class="text-warning far fa-star"></i>
-                        {% endif %}
-                    {% endfor %}
+                    <div class="product-rating">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= full_stars %}
+                                <i class="fas fa-star text-warning"></i>
+                            {% elif half_star and forloop.counter == full_stars|add:1 %}
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            {% else %}
+                                <i class="far fa-star text-warning"></i>
+                            {% endif %}
+                        {% endfor %}
+
+                        <span class="ms-2">({{ review_count }} reviews)</span>
+                    </div>
                      <!--if superuser, show edit/delete links-->
                     {% if request.user.is_superuser %}
                     <small class="ml-3">

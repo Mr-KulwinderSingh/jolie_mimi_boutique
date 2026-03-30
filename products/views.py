@@ -2,14 +2,26 @@ from django.shortcuts import render,  reverse, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.db.models import Avg
 from django.db.models.functions import Lower
 from .models import Product, Category, ProductReview
 from .forms import ReviewForm, ProductForm
 from .forms import *
+from math import floor
 
 
 def shop_all(request):
     """ Show all products together with sorting order and search selection """
+    
+    products = Product.objects.annotate(
+    avg_rating=Avg('reviews__rating')
+    ).distinct()
+
+    for product in products:
+        avg = product.avg_rating or 0  # 👈 handles None safely
+        product.full_stars = int(floor(avg))
+
+
     products = Product.objects.all()
     query = None
     categories = None
@@ -61,23 +73,31 @@ def shop_all(request):
 
     return render(request, 'products/products.html', context)
 
-
 def product_detail(request, product_id):
-    """  A view to show an individual products """
-
+    """A view to show an individual product with proper star ratings from reviews."""
     product = get_object_or_404(Product, pk=product_id)
-    form = ReviewForm
-
+    form = ReviewForm()
     quantity_range = range(1, min(product.stock, 10) + 1)
+
+    # Calculate average rating from reviews
+    average = product.reviews.aggregate(avg=Avg('rating'))['avg'] or 0
+
+    # Determine number of full, half, and empty stars
+    full_stars = int(floor(average))  # number of full stars
+    half_star = 1 if average - full_stars >= 0.5 else 0  # 1 if half star needed, else 0
+    empty_stars = 5 - full_stars - half_star  # remaining empty stars
 
     context = {
         'product': product,
         'form': form,
         'quantity_range': quantity_range,
+        'full_stars': full_stars,
+        'half_star': half_star,
+        'empty_stars': empty_stars,
+        'review_count': product.reviews.count(),
     }
 
     return render(request, 'products/product_detail.html', context)
-
 
 @login_required
 def add_review(request, product_id):

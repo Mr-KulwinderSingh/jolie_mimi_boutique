@@ -11,7 +11,6 @@ class ProducAdmin(admin.ModelAdmin):
         'category',
         'selling_price',
         'discounted_price',
-        'rating',
         'description',
         'image',
         'has_sizes',
