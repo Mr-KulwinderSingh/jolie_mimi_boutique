@@ -2,8 +2,9 @@ from django.shortcuts import render,  reverse, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.db.models import Avg
+from django.db.models import Avg, Value, FloatField
 from django.db.models.functions import Lower
+from django.db.models.functions import Coalesce
 from .models import Product, Category, ProductReview
 from .forms import ReviewForm, ProductForm
 from .forms import *
@@ -14,21 +15,22 @@ def shop_all(request):
     """ Show all products together with sorting order and search selection """
     
     products = Product.objects.annotate(
-    avg_rating=Avg('reviews__rating')
+    avg_rating=Coalesce(
+        Avg('reviews__rating'), 
+        Value(0, output_field=FloatField())
+        )
     ).distinct()
 
     for product in products:
-        avg = product.avg_rating or 0  # 👈 handles None safely
-        product.full_stars = int(floor(avg))
+        product.full_stars = int(floor(product.avg_rating))
 
-
-    products = Product.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
 
     if request.GET:
+        # SORTING
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -36,19 +38,27 @@ def shop_all(request):
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'Category':
-                sortkey = 'category__name'  
+                sortkey = 'category__name'
+
+            if sortkey == 'rating':
+                sortkey = 'avg_rating'
+
+            # Direction handling
             if 'direction' in request.GET:
-                direction = request.GET['direction']
+                direction = request.GET.get('direction', 'asc')
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
+                
             products = products.order_by(sortkey)
-
+    
+    # FILTER CATEGORY
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        # SEARCH
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -61,6 +71,10 @@ def shop_all(request):
             queries = Q(
                 name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
+
+    # ⭐ Add stars AFTER queryset is final
+    for product in products:
+        product.full_stars = int(floor(product.avg_rating))        
 
     current_sorting = f'{sort}_{direction}'
 
@@ -160,31 +174,6 @@ def edit_review(request, review_id):
     }
     return render(request, template, context)
 
-
-@login_required
-# def add_product(request):
-#     """ Add a product to the store """
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Sorry only store owner can do that.')
-#         return redirect(reverse('home'))
-
-#     if request.method == 'POST':
-#         form = ProductForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             product = form.save()
-#             messages.success(request, 'Successfully added product!')
-#             return redirect(reverse('product_detail', args=[product.id]))
-#         else:
-#             messages.error(
-#                 request, 'Failed to add product. Check if the form is valid.')
-#     else:
-#         form = ProductForm() 
-#     template = 'products/add_product.html'
-#     context = {
-#         'form': form,
-#     }
-
-#     return render(request, template, context)
 @login_required
 def add_product(request):
     """ Add a product to the store """

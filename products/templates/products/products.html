@@ -38,9 +38,9 @@
                                     Price (low to high)</option>
                                 <option value="selling_price_desc" {% if current_sorting == "selling_price_desc" %}selected{% endif %}>
                                     Price (high to low)</option>
-                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
+                                <option value="rating_asc" {% if current_sorting == 'avg_rating_asc' %}selected{% endif %}>
                                     Rating (low to high)</option>
-                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>
+                                <option value="rating_desc" {% if current_sorting == 'avg_rating_desc' %}selected{% endif %}>
                                     Rating (high to low)</option>
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name 
                                     (A-Z)</option>
@@ -103,13 +103,18 @@
                                         </p>
                                         {% endif %}
                                         <!--if product has rating, display stars hilighting rating -->
+                                        
                                         {% for i in "12345" %}
                                             {% if forloop.counter <= product.full_stars %}
-                                                 <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
                                             {% else %}
-                                                 <i class="fas fa-star text-warning"></i>
+                                                <i class="far fa-star text-warning"></i>
                                             {% endif %}
                                         {% endfor %}
+
+                                        <small class="text-muted">
+                                            ({{ product.reviews.count }} reviews)
+                                        </small>
                                         <!--if superuser display edit/delete links-->
                                         {% if request.user.is_superuser %}
                                         <small class="ml-3">
