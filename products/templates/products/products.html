@@ -111,10 +111,6 @@
                                                 <i class="far fa-star text-warning"></i>
                                             {% endif %}
                                         {% endfor %}
-
-                                        <small class="text-muted">
-                                            ({{ product.reviews.count }} reviews)
-                                        </small>
                                         <!--if superuser display edit/delete links-->
                                         {% if request.user.is_superuser %}
                                         <small class="ml-3">

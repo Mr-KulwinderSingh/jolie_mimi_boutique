@@ -56,8 +56,9 @@
                                 <i class="far fa-star text-warning"></i>
                             {% endif %}
                         {% endfor %}
-
-                        <span class="ms-2">({{ review_count }} reviews)</span>
+                        <small class="text-muted">
+                            ({{ product.reviews.count }})
+                        </small>
                     </div>
                      <!--if superuser, show edit/delete links-->
                     {% if request.user.is_superuser %}
